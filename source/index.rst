@@ -4,7 +4,8 @@ Welcome to the Stormpath Admin Console Guide
 .. toctree::
    :maxdepth: 2
 
-   outline
+   getting_started
+   administration
 
 
 
