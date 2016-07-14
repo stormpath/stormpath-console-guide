@@ -1,0 +1,5 @@
+.. _organizations:
+
+*************
+Organizations
+*************

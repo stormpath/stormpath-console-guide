@@ -1,6 +1,8 @@
-***************
-Getting Started
-***************
+.. _home:
+
+*********************
+Getting Started: Home
+*********************
 
 Describe the Home page and the broad navigation instructions
 

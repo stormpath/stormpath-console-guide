@@ -4,8 +4,15 @@ Welcome to the Stormpath Admin Console Guide
 .. toctree::
    :maxdepth: 2
 
-   getting_started
+   home
    administration
+   applications
+   organizations
+   directories
+   groups
+   accounts
+   agents
+   id_site
 
 
 
