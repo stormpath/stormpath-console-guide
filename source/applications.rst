@@ -4,22 +4,22 @@
 Applications
 ************
 
-Finding a {resource}'s URL
+Finding an Application's URL
 ================================
 
-Creating {resources}
+Creating Applications
 ========================
 
-Editing {resources}
+Editing Applications
 ========================
 
-Enabling & Disabling {resources}
-================================
+Enabling & Disabling Applications
+=================================
 
-Deleting {resources}
+Deleting Applications
 ========================
 
-Finding Related {resources}
+Finding Related Applications
 ================================
 
 Bulk Actions
