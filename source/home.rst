@@ -31,7 +31,7 @@ Your authenticated session with the Stormpath Admin Console will terminate when 
 - You open a new tab and visit http://api.stormpath.com from there
 - After 30 minutes of inactivity
 
-Before you are logged out due to inactivity you will receive a warning.
+Before you are logged out due to inactivity you will receive a warning and be given the option to extend the session.
 
 .. _home-log-out:
 
@@ -61,7 +61,7 @@ Where ever you are in the Admin Console, you will see a box that says "Questions
 The Home Page
 =============
 
-The Home page that you first see upon logging-in is designed to give you quick access to the most common functions required to administrate your Stormpath tenant. [`Click here to go there now <https://api.stormpath.com/ui2/index.html/>`__]
+The Home page that you first see upon logging-in is designed to give you quick access to the most common functions required to administrate your Stormpath tenant. [`Click here to go there now <https://api.stormpath.com/ui2/index.html#/>`__]
 
 On the right-hand side you will find:
 

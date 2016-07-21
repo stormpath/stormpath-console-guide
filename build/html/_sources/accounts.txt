@@ -5,22 +5,22 @@ Accounts
 ********
 
 
-Finding a {resource}'s URL
+Finding an Account's URL
 ==========================
 
-Creating {resources}
+Creating Accounts
 ========================
 
-Editing {resources}
+Editing Accounts
 ========================
 
-Enabling & Disabling {resources}
+Enabling & Disabling Accounts
 ================================
 
-Deleting {resources}
+Deleting Accounts
 ========================
 
-Finding Related {resources}
+Finding Related Resources
 ================================
 
 Bulk Actions
