@@ -50,9 +50,7 @@ Once this value is changed, your monthly total (if applicable) will update, and 
 Billing
 =======================
 
-The "Billing" page is where you can manage the credit card that you use to pay for your Stormpath subscription.
-
-
+The "Billing" page is where you can manage the credit card, if any, that you use to pay for your Stormpath subscription.
 
 .. _admin-api-keys:
 
