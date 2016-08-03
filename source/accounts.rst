@@ -11,6 +11,8 @@ Finding an Account's URL
 Creating Accounts
 ========================
 
+.. _accounts-editing:
+
 Editing Accounts
 ========================
 

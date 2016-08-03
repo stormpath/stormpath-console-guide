@@ -75,6 +75,8 @@ This link will bring you to the `Tenant Administrators <https://api.stormpath.co
 - Resend the verification email for an Administrator Account
 - Add an Administrator to a Group, or remove them from one in which they are already a member
 
+Clicking **Edit** will take you to that Account's main page. For more information, see :ref:`accounts-editing`.
+
 .. _admin-adding-admins:
 
 Adding Administrators
