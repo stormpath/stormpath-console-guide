@@ -14,7 +14,7 @@ Editing Organizations
 ========================
 
 Enabling & Disabling Organizations
-================================
+===================================
 
 Deleting Organizations
 ========================

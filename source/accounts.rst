@@ -14,6 +14,11 @@ Creating Accounts
 Editing Accounts
 ========================
 
+.. _accounts-apikeys:
+
+Managing Account API Keys
+-------------------------
+
 Enabling & Disabling Accounts
 ================================
 

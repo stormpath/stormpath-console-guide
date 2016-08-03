@@ -18,7 +18,7 @@ Wherever you are in the Stormpath Admin Console, you will always see the Admin M
 Subscription Levels
 =======================
 
-The **My Subscription** page will tell you more about your current subscription with Stormpath, and also allow you to change it.
+The `My Subscription page <https://api.stormpath.com/ui2/index.html#/admins>`__ will tell you more about your current subscription with Stormpath, and also allow you to change it.
 
 When the page opens you will land on the tab for your current Subscription tier. There will also be a green notice indicating that this is your current plan.
 
@@ -50,14 +50,42 @@ Once this value is changed, your monthly total (if applicable) will update, and 
 Billing
 =======================
 
-The "Billing" page is where you can manage the credit card, if any, that you use to pay for your Stormpath subscription.
+The `Billing page <https://api.stormpath.com/ui2/index.html#/billing>`__ is where you can manage the credit card, if any, that you use to pay for your Stormpath subscription. If you are currently on a free tier, you will not see any credit cards here.
 
 .. _admin-api-keys:
 
 My API Keys
 ===========
 
-.. _admin-adding-admins:
+Clicking on this will take you to the main page for your Account and then to the API Keys section therein. In this section you will find a list of the API Keys that you have generated for your Account. For more information, please see :ref:`accounts-apikeys`.
+
+Any requests that you make to the Stormpath platform will require a valid API Key and Secret combo. For more about this, you can see the `REST API Reference section on Authentication <https://docs.stormpath.com/rest/product-guide/latest/reference.html#authentication>`__.
+
+.. _admin-managing-admins:
 
 Managing Tenant Administrators
 ==============================
+
+This link will bring you to the `Tenant Administrators <https://api.stormpath.com/ui2/index.html#/admins>`__ page. Here you will find a list of Accounts that have Administrator status within your Tenant. On this page you can:
+
+- Search for Administrators in the top-right search box
+- Add new Administrators using the "Add Administrator" button (see :ref:`below <admin-adding-admins>`)
+- Change the status of an Administrator Account to: `Enabled`, `Disabled` or `Unverified`
+- Reset an Administrator's password.
+- Resend the verification email for an Administrator Account
+- Add an Administrator to a Group, or remove them from one in which they are already a member
+
+.. _admin-adding-admins:
+
+Adding Administrators
+----------------------
+
+To add a new Administrator Account, click on the "Add Administrator" button. This will bring up the "Add Administrators" dialog. Here you will have to:
+
+#. Add one (or more) email addresses. Each email address will have an invitation email sent, and if the user clicks on the link in the email, an Account will be made for them in the Stormpath Administrators Directory.
+#. Either customize the "Subject" of the invitation email, or leave it as is.
+#. Either customize the "Message" or body of the invitation email, or leave it as is.
+
+.. note::
+
+  All Stormpath Tenant Administrators have the same privileges. This means that any Administrators that you add will have full access to the Stormpath Admin Console, and their Account will be able to do everything that your Account can, including adding more Tenant Administrators.
