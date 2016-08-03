@@ -4,22 +4,22 @@
 Groups
 ******
 
-Finding a {resource}'s URL
+Finding a Group's URL
 ================================
 
-Creating {resources}
+Creating Groups
 ========================
 
-Editing {resources}
+Editing Groups
 ========================
 
-Enabling & Disabling {resources}
+Enabling & Disabling Groups
 ================================
 
-Deleting {resources}
+Deleting Groups
 ========================
 
-Finding Related {resources}
+Finding Related Groups
 ================================
 
 Bulk Actions

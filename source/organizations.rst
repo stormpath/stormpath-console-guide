@@ -4,22 +4,22 @@
 Organizations
 *************
 
-Finding a {resource}'s URL
+Finding a Organization's URL
 ================================
 
-Creating {resources}
+Creating Organizations
 ========================
 
-Editing {resources}
+Editing Organizations
 ========================
 
-Enabling & Disabling {resources}
+Enabling & Disabling Organizations
 ================================
 
-Deleting {resources}
+Deleting Organizations
 ========================
 
-Finding Related {resources}
+Finding Related Organizations
 ================================
 
 Bulk Actions

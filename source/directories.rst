@@ -4,22 +4,22 @@
 Directories
 ***********
 
-Finding a {resource}'s URL
+Finding a Directory's URL
 ================================
 
-Creating {resources}
+Creating Directories
 ========================
 
-Editing {resources}
+Editing Directories
 ========================
 
-Enabling & Disabling {resources}
+Enabling & Disabling Directories
 ================================
 
-Deleting {resources}
+Deleting Directories
 ========================
 
-Finding Related {resources}
+Finding Related Directories
 ================================
 
 Bulk Actions
