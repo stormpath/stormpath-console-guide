@@ -16,14 +16,17 @@ Editing Directories
 Enabling & Disabling Directories
 ================================
 
+Bulk
+----
+
 Deleting Directories
 ========================
 
+Bulk
+-----
+
 Finding Related Directories
 ================================
-
-Bulk Actions
-=============
 
 Point them to Agents section if they want to make an LDAP or AD Directory
 

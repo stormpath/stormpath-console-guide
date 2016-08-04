@@ -16,11 +16,17 @@ Editing Organizations
 Enabling & Disabling Organizations
 ===================================
 
+Bulk
+----
+
 Deleting Organizations
 ========================
+
+Bulk
+----
 
 Finding Related Organizations
 ================================
 
-Bulk Actions
+Other Tasks
 =============

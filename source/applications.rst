@@ -8,8 +8,8 @@ The `Applications page <https://api.stormpath.com/ui2/index.html#/applications>`
 
 - Search for Applications in the top-right search box
 - Add new Applications using the "Create Application" button (see :ref:`below <applications-creating>`)
-- Change the status of an Application to: `Enabled` or `Disabled`
-- Delete an Application
+- Change the status of one or more Applications to: `Enabled` or `Disabled`
+- Delete one or more Applications
 - :ref:`Edit an Application <applications-editing>`
 
 Finding an Application's URL
@@ -76,6 +76,11 @@ You can enable or disable Applications either from:
 
 Choosing to Disable an Application will bring up a confirmation dialog.
 
+Bulk Status Changes
+-------------------
+
+You can change the status of multiple Applications from the Application list view. Select as many Applications as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Enabled" or "Disabled".
+
 Deleting Applications
 ========================
 
@@ -86,11 +91,21 @@ Deleting Applications
 
 Deleting an Application is done from the `Applications page <https://api.stormpath.com/ui2/index.html#/applications>`__. In the "Action" column, click on **Delete**. This will bring up a confirmation dialog. Once you have read the dialog, select the "I Understand" checkbox and then click on **Delete Application**.
 
+Bulk Application Deletion
+-------------------------
+
+You can delete multiple Applications from the Application list view. Select as many Applications as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Delete Application".
+
 Finding Related Resources
 ================================
 
-Bulk Actions
-=============
+When you are looking at the page for a specific Application, the left-side navigation bar has links to lists of resources related to that Application. Specifically, you can find:
+
+- **Accounts:** A list of Accounts found in the Account Stores that are mapped to this Application.
+- **Account Stores:** A list of the Groups, Directories, and Organizations that are mapped to this Application via Account Store Mappings.
+- **Groups:** A list of Groups that exist within this Application. These Groups do not have to mapped as Account Stores for the Application.
+
+For more information about what you can do with these lists, see :ref:`applications-othertasks`.
 
 .. _applications-othertasks:
 
@@ -102,14 +117,36 @@ Other Tasks
 Managing an Application's Accounts
 -----------------------------------
 
+When viewing the page for a specific Application, you can see all of its associated Accounts by clicking on the "Accounts" link in the left-side navigation panel. This view will show you a list of all Accounts that are contained in Account Stores mapped to the Application.
+
+The view itself has all of the same options and behavior as the regular `Accounts <https://api.stormpath.com/ui2/index.html#/accounts>`__ page. For more information about working with Accounts in the Admin Console, please see the :ref:`Accounts chapter <accounts>`.
+
 .. _applications-accountstores:
 
 Managing an Application's Account Stores
 ----------------------------------------
 
+When viewing the page for a specific Application, you can see all of its associated Account Stores by clicking on the "Account Stores" link in the left-side navigation panel. This list is composed of all of the Organizations, Directories and Groups that have Account Store Mappings to this Application.
+
+From this view, you can do a number of things:
+
+- Add new Account Stores
+- Sort Account Stores by login priority
+- Unmap an Account Store
+- Set an Account Store as the default location for new Accounts and/or Groups
+
+
+Sorting Account Stores
+^^^^^^^^^^^^^^^^^^^^^^
+
 Dragging!
 
 If nothing else, we will need information on all the things you CAN'T do with mirror directories.
+
+.. _applications-groups:
+
+Managing an Application's Groups
+--------------------------------
 
 .. _applications-oauth:
 

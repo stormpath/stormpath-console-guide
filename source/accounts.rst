@@ -24,11 +24,17 @@ Managing Account API Keys
 Enabling & Disabling Accounts
 ================================
 
+Bulk
+----
+
 Deleting Accounts
 ========================
+
+Bulk
+----
 
 Finding Related Resources
 ================================
 
-Bulk Actions
+Other Tasks
 =============

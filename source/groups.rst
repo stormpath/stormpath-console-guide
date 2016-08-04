@@ -16,11 +16,17 @@ Editing Groups
 Enabling & Disabling Groups
 ================================
 
+Bulk
+----
+
 Deleting Groups
 ========================
+
+Bulk
+----
 
 Finding Related Groups
 ================================
 
-Bulk Actions
-=============
+Other Tasks
+===========
