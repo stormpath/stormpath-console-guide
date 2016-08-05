@@ -15,7 +15,7 @@ The `Applications page <https://api.stormpath.com/ui2/index.html#/applications>`
 Finding an Application's URL
 ================================
 
-To find an Application's unique URL, first click on its name from the main list of Applications. It's URL can be found at the top of the Application's page, in the field marked "HREF".
+To find an Application's unique URL, first click on its name from the main list of Applications. Its URL can be found at the top of the Application's page, in the field marked "HREF".
 
 Clicking on this URL will open your Application's information in JSON format and display it in your browser.
 
@@ -80,7 +80,7 @@ You can enable or disable Applications either from:
 1. The main list of Applications found on the main `Applications page <https://api.stormpath.com/ui2/index.html#/applications>`__, via the drop-down menus in the "Status" column, or
 2. On the page for any individual Application, via the "Status" field.
 
-Choosing to Disable an Application will bring up a confirmation dialog.
+Choosing to disable an Application will bring up a confirmation dialog.
 
 Bulk Status Changes
 -------------------

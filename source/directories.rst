@@ -4,17 +4,56 @@
 Directories
 ***********
 
+The `Directories page <https://api.stormpath.com/ui2/index.html#/directorys>`__ contains the list of Directories in your Stormpath Tenant. On this page you can quickly:
+
+- Search for Directories in the top-right search box
+- :ref:`Add new Directories <directories-creating>` using the "Create Directory" button
+- :ref:`Change the status <directories-changing-status>` of one or more Directories to: `Enabled` or `Disabled`
+- :ref:`Delete one or more Directories <directories-deleting>`
+- :ref:`Edit an Directory <directories-editing>`
+
 Finding a Directory's URL
 ================================
+
+To find an Directory's unique URL, first click on its name from the main list of Directories. Its URL can be found at the top of the Directory's page, in the field marked "HREF".
+
+Clicking on this URL will open your Directory's information in JSON format and display it in your browser.
+
+.. _directories-creating:
 
 Creating Directories
 ========================
 
+.. _directories-creating-cloud:
+
 Creating a Cloud Directory
 --------------------------
 
+.. _directories-creating-social:
+
 Creating a Social Directory
 ---------------------------
+
+Google
+^^^^^^
+
+Facebook
+^^^^^^^^^^^^
+
+GitHub
+^^^^^^
+
+LinkedIn
+^^^^^^^^^^^^
+
+.. _directories-creating-ldap:
+
+Creating an LDAP Directory
+--------------------------
+
+Link to agents.rst
+
+.. _directories-creating-saml:
 
 Creating a SAML Directory
 -------------------------
@@ -1082,26 +1121,112 @@ You should now be able to log-in to your Stormpath-powered application with Azur
 Editing Directories
 ========================
 
+To edit an Directory, first click on its name from the main list of Applications. This will bring you to the Directory's page, with the Directory's name displayed on the top.
+
+Here you can edit the Directory's:
+
+- Name
+- Description
+- Status (Enabled or Disabled)
+- Custom Data
+- Password Policy
+
+On the left-hand side you will see a set of links to various resources associated with this Application, such as Accounts and Groups. For more information about these, see :ref:`directories-othertasks` below.
+
+.. _directory-custom-data:
+
+Adding Custom Data to a Directory
+------------------------------------
+
+In the "Custom Data" section of the Directory page, you will see two tabs: "Editor" and "JSON".
+
+To add a new Custom Data entry, click the chevron. This will open a menu with the different kinds of fields that you can add. Click on the kind that you want, and a dummy entry will be created, into which you can then enter whatever values you like.
+
+Once you are finished, a green "Saved" notification will appear in the top right of the "Editor" section. If you would like to undo your latest entry, simply click on **Revert**.
+
+To see what your Custom Data would look like as JSON, click on the "JSON" tab.
+
+.. _directory-password-policy:
+
+Modifying Your Directory's Password Policy
+------------------------------------------
+
+.. _directories-changing-status:
+
 Enabling & Disabling Directories
 ================================
 
-Bulk
-----
+You can enable or disable Directories either from:
+
+1. The main list of Directories found on the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__, via the drop-down menus in the "Status" column, or
+2. On the page for any individual Directory, via the "Status" field.
+
+Choosing to disable a Directory will bring up a confirmation dialog.
+
+Bulk Status Changes
+--------------------
+
+You can change the status of multiple Directories from the Application list view. Select as many Directories as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Enabled" or "Disabled".
 
 Deleting Directories
 ========================
 
-Bulk
------
+.. warning::
 
-Finding Related Directories
-================================
+  Deleting an Directory permanently and completely erases it and any of its related data (including all Accounts) from Stormpath.
+  We recommend that you disable Directories instead of deleting them if you anticipate that you might use the Directory again or if you want to retain its data for historical reference.
 
-Point them to Agents section if they want to make an LDAP or AD Directory
+Deleting an Directory is done from the `Directories page <https://api.stormpath.com/ui2/index.html#/directorys>`__. In the "Action" column, click on **Delete**. This will bring up a confirmation dialog. Once you have read the dialog, select the "I Understand" checkbox and then click on **Delete Directory**.
+
+Bulk Directory Deletion
+-------------------------
+
+You can delete multiple Directories from the Directory list view. Select as many Directories as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Delete Directory".
+
+.. _directories-othertasks:
+
+Other Tasks
+===========
+
+.. _directories-groups:
+
+Managing an Directory's Groups
+--------------------------------
+
+When viewing the page for a specific Directory, you can see all of its associated Groups by clicking on the "Groups" link in the left-side navigation panel.
+
+Here you will see a list of all of the Groups that are associated with this Directory. The right-most "Mapped Via" column specifies which Directory the Group belongs to.
+
+From this view you can:
+
+- Search for Groups using the search box in the top right
+- Add new Groups to this Directory, via the "Create Group" button.
+
+.. _directories-accounts:
+
+Managing an Directory's Accounts
+-----------------------------------
+
+When viewing the page for a specific Directory, you can see all of its associated Accounts by clicking on the "Accounts" link in the left-side navigation panel. This view will show you a list of all Accounts that are contained in Account Stores mapped to the Directory.
+
+The view itself has all of the same options and behavior as the regular `Accounts <https://api.stormpath.com/ui2/index.html#/accounts>`__ page. For more information about working with Accounts in the Admin Console, please see the :ref:`Accounts chapter <accounts>`.
 
 Setting-up Workflows
 --------------------
 
-This a meaty section.
+Account Registration & Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Verification Email
+""""""""""""""""""
+
+Verification Success Email
+""""""""""""""""""""""""""
+
+Welcome Email
+"""""""""""""
+
+Password Reset
+^^^^^^^^^^^^^^
 
 

@@ -15,7 +15,7 @@ The `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations
 Finding a Organization's URL
 ================================
 
-To find an Organization's unique URL, first click on its name from the main list of Organizations. It's URL can be found at the top of the Organization's page, in the field marked "HREF".
+To find an Organization's unique URL, first click on its name from the main list of Organizations. Its URL can be found at the top of the Organization's page, in the field marked "HREF".
 
 Clicking on this URL will open your Organization's information in JSON format and display it in your browser.
 
