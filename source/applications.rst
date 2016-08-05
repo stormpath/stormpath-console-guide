@@ -126,34 +126,76 @@ The view itself has all of the same options and behavior as the regular `Account
 Managing an Application's Account Stores
 ----------------------------------------
 
-When viewing the page for a specific Application, you can see all of its associated Account Stores by clicking on the "Account Stores" link in the left-side navigation panel. This list is composed of all of the Organizations, Directories and Groups that have Account Store Mappings to this Application.
+When viewing the page for a specific Application, you can see all of its associated Account Stores by clicking on the "Account Stores" link in the left-side navigation panel. This list is composed of all of the **Organizations**, **Directories** and **Groups** that have **Account Store Mappings** to this Application.
 
 From this view, you can do a number of things:
 
-- Add new Account Stores
-- Sort Account Stores by login priority
-- Unmap an Account Store
-- Set an Account Store as the default location for new Accounts and/or Groups
+- Add new Account Stores with the "Add Account Store" in the top right
+- :ref:`Sort Account Stores <applications-sorting-account-stores>` by login priority
+- Unmap an Account Store. This will prevent all Accounts within this Account Store from logging in to this Application.
+- :ref:`Set an Account Store <applications-default-account-stores>` as the default location for new Accounts and/or Groups
 
+.. _applications-sorting-account-stores:
 
 Sorting Account Stores
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Dragging!
+Every login attempt to your Application is made against that Application's mapped Account Stores. The Account Stores in this view are ordered according to the left-most "Priority" column. This priority ranking represents the order in which the Account Stores are checked for every login attempt.
 
-If nothing else, we will need information on all the things you CAN'T do with mirror directories.
+.. note::
+
+  For more information about logging in to Stormpath, see `How Login Attempts Work <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#how-login-attempts-work-in-stormpath>`__ in the REST Product Guide.
+
+To change the order of these Account Stores, hover your mouse over the "Priority" column. Your cursor should change into a double-arrow and you will be able to click and drag the Account Store into whatever position you wish.
+
+.. _applications-default-account-stores:
+
+Setting Default Account and Groups Locations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is possible to set which Account Store should be the default for new Accounts or Groups. This means that if an Account Store is not specified at the time of Account/Group creation, it will automatically go into that Account Store.
+
+- Organizations can be chosen as the default location for new Accounts
+- Directories can be chosen as the default location for both new Accounts and Groups
+- Groups can be chosen as the default location for new Accounts
+
+To set an Account Store as the default, make sure you are in the Account Store list view for your Application, and then select one of the options in either the "Default Account Location" or "Default Group Location" columns.
+
+.. note::
+
+  Mirrored Directories (e.g. Social, LDAP, SAML) cannot be set as either the default Account or Group location.
 
 .. _applications-groups:
 
 Managing an Application's Groups
 --------------------------------
 
+When viewing the page for a specific Application, you can see all of its associated Groups by clicking on the "Groups" link in the left-side navigation panel.
+
+Here you will see a list of all of the Groups that are associated with this Application. The right-most "Mapped Via" column specifies which Directory the Group belongs to.
+
+From this view you can:
+
+- Search for Groups using the search box in the top right
+- Add new Groups to this Application, via the "Create Group" button.
+
 .. _applications-oauth:
 
 Managing an Application's OAuth Policy
 --------------------------------------
 
+Clicking the "OAuth Policy" link in the left-side navigation panel will bring you to your Application's OAuth Policy information. Here you will find:
+
+- Your **OAuth Token URL**, which is used to generate and validate tokens
+- Your **Access Token** and **Refresh Token** Time-to-Live durations. For more information about these, please see the `REST API Reference <https://docs.stormpath.com/rest/product-guide/latest/reference.html#oauth-policy>`__.
+
 .. _applications-saml:
 
-Managing an Application's SAML Policy
+The Application's SAML Policy
 --------------------------------------
+
+The Application's "SAML Policy" page contains the "SAML SSO Initiation Endpoint" that is used as part of the Service-Provider-initiated SAML flow. For more information about this, please see the...
+
+.. todo::
+
+  Where can they find out more about this? Presumably somewhere in this guide.
