@@ -58,7 +58,7 @@ Adding Custom Data to an Application
 
 In the "Custom Data" section of the Application page, you will see two tabs: "Editor" and "JSON".
 
-To add a new Custom Data entry, click the `[∨]`. This will open a menu with the different kinds of fields that you can add. Click on the kind that you want, and a dummy entry will be created, into which you can then enter whatever values you like.
+To add a new Custom Data entry, click the chevron. This will open a menu with the different kinds of fields that you can add. Click on the kind that you want, and a dummy entry will be created, into which you can then enter whatever values you like.
 
 Once you are finished, a green "Saved" notification will appear in the top right of the "Editor" section. If you would like to undo your latest entry, simply click on **Revert**.
 
@@ -70,6 +70,10 @@ Enabling & Disabling Applications
 =================================
 
 All login attempts in Stormpath are made against a specific Application. As a result, if an Application has a "Disabled" status then any login attempts made to that Application will fail.
+
+.. note::
+
+  For more information about logging in to Stormpath, see `How Login Attempts Work <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#how-login-attempts-work-in-stormpath>`__ in the REST Product Guide.
 
 You can enable or disable Applications either from:
 
