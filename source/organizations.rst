@@ -52,7 +52,7 @@ Here you can edit the Organization's:
 On the left-hand side you will see a link to the Organization's Account Stores. For more information, see  :ref:`organizations-account-stores` below.
 
 Adding Custom Data to an Organization
-------------------------------------
+--------------------------------------
 
 In the "Custom Data" section of the Organization page, you will see two tabs: "Editor" and "JSON".
 
@@ -100,7 +100,7 @@ Deleting Organizations
 Deleting an Organization is done from the `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations>`__. In the "Action" column, click on **Delete**. This will bring up a confirmation dialog. Once you have read the dialog, select the "I Understand" checkbox and then click on **Delete Organization**.
 
 Bulk Organization Deletion
--------------------------
+---------------------------
 
 You can delete multiple Organizations from the Organization list view. Select as many Organizations as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Delete Organization".
 
@@ -121,7 +121,7 @@ From this view, you can do a number of things:
 .. _organizations-sorting-account-stores:
 
 Sorting Account Stores
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 Every login attempt to your Organization is made against that Organization's mapped Account Stores. The Account Stores in this view are ordered according to the left-most "Priority" column. This priority ranking represents the order in which the Account Stores are checked for every login attempt.
 
@@ -134,7 +134,7 @@ To change the order of these Account Stores, hover your mouse over the "Priority
 .. _organizations-default-account-stores:
 
 Setting Default Account and Groups Locations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 It is possible to set which Account Store should be the default for new Accounts or Groups. This means that if an Account Store is not specified at the time of Account/Group creation, it will automatically go into that Account Store.
 
