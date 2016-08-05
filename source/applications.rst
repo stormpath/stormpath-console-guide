@@ -7,9 +7,9 @@ Applications
 The `Applications page <https://api.stormpath.com/ui2/index.html#/applications>`__ contains the list of Applications in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Applications in the top-right search box
-- Add new Applications using the "Create Application" button (see :ref:`below <applications-creating>`)
-- Change the status of one or more Applications to: `Enabled` or `Disabled`
-- Delete one or more Applications
+- :ref:`Add new Applications <applications-creating>` using the "Create Application" button
+- :ref:`Change the status <applications-changing-status>` of one or more Applications to: `Enabled` or `Disabled`
+- :ref:`Delete one or more Applications <applications-deleting>`
 - :ref:`Edit an Application <applications-editing>`
 
 Finding an Application's URL
@@ -64,6 +64,8 @@ Once you are finished, a green "Saved" notification will appear in the top right
 
 To see what your Custom Data would look like as JSON, click on the "JSON" tab.
 
+.. _applications-changing-status:
+
 Enabling & Disabling Applications
 =================================
 
@@ -80,6 +82,8 @@ Bulk Status Changes
 -------------------
 
 You can change the status of multiple Applications from the Application list view. Select as many Applications as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Enabled" or "Disabled".
+
+.. _applications-deleting:
 
 Deleting Applications
 ========================
