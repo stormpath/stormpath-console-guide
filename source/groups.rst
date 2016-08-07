@@ -21,7 +21,7 @@ Clicking on this URL will open your Group's information in JSON format and displ
 
 .. _groups-create:
 
-Creating Groups
+Create Groups
 ========================
 
 To create a new Group, start by clicking on **Create Group** in the top right of the main `Groups page <https://api.stormpath.com/ui2/index.html#/groups>`__. This will bring up the "Create Group" dialog.

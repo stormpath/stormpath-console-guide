@@ -1215,8 +1215,12 @@ When viewing the page for a specific Directory, you can see all of its associate
 
 The view itself has all of the same options and behavior as the regular `Accounts <https://api.stormpath.com/ui2/index.html#/accounts>`__ page. For more information about working with Accounts in the Admin Console, please see the :ref:`Accounts chapter <accounts>`.
 
+.. _directories-workflows:
+
 Set-up Workflows
 --------------------
+
+.. _directories-workflows-registration:
 
 Account Registration & Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1229,6 +1233,8 @@ Verification Success Email
 
 Welcome Email
 """""""""""""
+
+.. _directories-workflows-password:
 
 Password Reset
 ^^^^^^^^^^^^^^

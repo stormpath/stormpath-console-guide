@@ -66,7 +66,7 @@ Any requests that you make to the Stormpath platform will require a valid API Ke
 Managing Tenant Administrators
 ==============================
 
-This link will bring you to the `Tenant Administrators <https://api.stormpath.com/ui2/index.html#/admins>`__ page. Here you will find a list of Accounts that have Administrator status within your Tenant. On this page you can:
+This link will bring you to the `Tenant Administrators <https://api.stormpath.com/ui2/index.html#/admins>`__ page. Here you will find a list of Accounts that have Administrator status within your Tenant. In Stormpath, Administrator Accounts are any Accounts in the "Stormpath Administrators" Directory. On this page you can:
 
 - Search for Administrators in the top-right search box
 - Add new Administrators using the "Add Administrator" button (see :ref:`below <admin-adding-admins>`)
@@ -75,7 +75,7 @@ This link will bring you to the `Tenant Administrators <https://api.stormpath.co
 - Resend the verification email for an Administrator Account
 - Add an Administrator to a Group, or remove them from one in which they are already a member
 
-Clicking **Edit** will take you to that Account's main page. For more information, see :ref:`accounts-editing`.
+Clicking **Edit** will take you to that Account's main page. For more information, see :ref:`accounts-edit`.
 
 .. _admin-adding-admins:
 
