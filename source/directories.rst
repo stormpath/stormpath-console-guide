@@ -7,31 +7,31 @@ Directories
 The `Directories page <https://api.stormpath.com/ui2/index.html#/directorys>`__ contains the list of Directories in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Directories in the top-right search box
-- :ref:`Add new Directories <directories-creating>` using the "Create Directory" button
-- :ref:`Change the status <directories-changing-status>` of one or more Directories to: `Enabled` or `Disabled`
-- :ref:`Delete one or more Directories <directories-deleting>`
-- :ref:`Edit an Directory <directories-editing>`
+- :ref:`Add new Directories <directories-create>` using the "Create Directory" button
+- :ref:`Change the status <directories-change-status>` of one or more Directories to: `Enabled` or `Disabled`
+- :ref:`Delete one or more Directories <directories-delete>`
+- :ref:`Edit an Directory <directories-edit>`
 
-Finding a Directory's URL
+Find a Directory's URL
 ================================
 
 To find an Directory's unique URL, first click on its name from the main list of Directories. Its URL can be found at the top of the Directory's page, in the field marked "HREF".
 
 Clicking on this URL will open your Directory's information in JSON format and display it in your browser.
 
-.. _directories-creating:
+.. _directories-create:
 
-Creating Directories
+Create a Directory
 ========================
 
-.. _directories-creating-cloud:
+.. _directories-create-cloud:
 
-Creating a Cloud Directory
+Create a Cloud Directory
 --------------------------
 
-.. _directories-creating-social:
+.. _directories-create-social:
 
-Creating a Social Directory
+Create a Social Directory
 ---------------------------
 
 Google
@@ -48,14 +48,14 @@ LinkedIn
 
 .. _directories-creating-ldap:
 
-Creating an LDAP Directory
+Create an LDAP Directory
 --------------------------
 
 Link to agents.rst
 
 .. _directories-creating-saml:
 
-Creating a SAML Directory
+Create a SAML Directory
 -------------------------
 
 .. todo::
@@ -1118,7 +1118,9 @@ You should now be able to log-in to your Stormpath-powered application with Azur
 
   Step 5: (Optional) Configure Attribute Mappings
 
-Editing Directories
+.. _directories-edit:
+
+Edit a Directory
 ========================
 
 To edit an Directory, first click on its name from the main list of Applications. This will bring you to the Directory's page, with the Directory's name displayed on the top.
@@ -1135,7 +1137,7 @@ On the left-hand side you will see a set of links to various resources associate
 
 .. _directory-custom-data:
 
-Adding Custom Data to a Directory
+Add Custom Data to a Directory
 ------------------------------------
 
 In the "Custom Data" section of the Directory page, you will see two tabs: "Editor" and "JSON".
@@ -1148,12 +1150,12 @@ To see what your Custom Data would look like as JSON, click on the "JSON" tab.
 
 .. _directory-password-policy:
 
-Modifying Your Directory's Password Policy
+Modify Your Directory's Password Policy
 ------------------------------------------
 
-.. _directories-changing-status:
+.. _directories-change-status:
 
-Enabling & Disabling Directories
+Enable & Disable Directories
 ================================
 
 You can enable or disable Directories either from:
@@ -1168,7 +1170,9 @@ Bulk Status Changes
 
 You can change the status of multiple Directories from the Application list view. Select as many Directories as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Enabled" or "Disabled".
 
-Deleting Directories
+.. _directories-delete:
+
+Delete Directories
 ========================
 
 .. warning::
@@ -1190,7 +1194,7 @@ Other Tasks
 
 .. _directories-groups:
 
-Managing an Directory's Groups
+Manage an Directory's Groups
 --------------------------------
 
 When viewing the page for a specific Directory, you can see all of its associated Groups by clicking on the "Groups" link in the left-side navigation panel.
@@ -1204,14 +1208,14 @@ From this view you can:
 
 .. _directories-accounts:
 
-Managing an Directory's Accounts
+Manage an Directory's Accounts
 -----------------------------------
 
 When viewing the page for a specific Directory, you can see all of its associated Accounts by clicking on the "Accounts" link in the left-side navigation panel. This view will show you a list of all Accounts that are contained in Account Stores mapped to the Directory.
 
 The view itself has all of the same options and behavior as the regular `Accounts <https://api.stormpath.com/ui2/index.html#/accounts>`__ page. For more information about working with Accounts in the Admin Console, please see the :ref:`Accounts chapter <accounts>`.
 
-Setting-up Workflows
+Set-up Workflows
 --------------------
 
 Account Registration & Verification

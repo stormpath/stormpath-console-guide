@@ -7,21 +7,21 @@ Organizations
 The `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations>`__ contains the list of Organizations in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Organizations in the top-right search box
-- :ref:`Add new Organizations <organizations-creating>` using the "Create Organization" button
-- :ref:`Change the status of one or more Organizations <organizations-changing-status>` to: `Enabled` or `Disabled`
-- :ref:`Delete one or more Organizations <organizations-deleting>`
-- :ref:`Edit an Organization <Organizations-editing>`
+- :ref:`Add new Organizations <organizations-create>` using the "Create Organization" button
+- :ref:`Change the status of one or more Organizations <organizations-change-status>` to: `Enabled` or `Disabled`
+- :ref:`Delete one or more Organizations <organizations-delete>`
+- :ref:`Edit an Organization <Organizations-edit>`
 
-Finding a Organization's URL
+Find a Organization's URL
 ================================
 
 To find an Organization's unique URL, first click on its name from the main list of Organizations. Its URL can be found at the top of the Organization's page, in the field marked "HREF".
 
 Clicking on this URL will open your Organization's information in JSON format and display it in your browser.
 
-.. _organizations-creating:
+.. _organizations-create:
 
-Creating Organizations
+Create Organizations
 ========================
 
 To create a new Organization, start by clicking on **Create Organization** in the top right of the main `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations>`__. This will bring up the "Create Organization" dialog.
@@ -34,9 +34,9 @@ You can also optionally enter in a "Description" for the Organization.
 
 After you have completed this, click **Create** and the "Create Organization" dialog will close and you will see your new Organization in the list of Organizations.
 
-.. _organizations-editing:
+.. _organizations-edit:
 
-Editing Organizations
+Edit Organizations
 ========================
 
 To edit an Organization, first click on its name from the main list of Organizations. This will bring you to the Organization's page, with the Organization's name displayed on the top.
@@ -51,7 +51,7 @@ Here you can edit the Organization's:
 
 On the left-hand side you will see a link to the Organization's Account Stores. For more information, see  :ref:`organizations-account-stores` below.
 
-Adding Custom Data to an Organization
+AddCustom Data to an Organization
 --------------------------------------
 
 In the "Custom Data" section of the Organization page, you will see two tabs: "Editor" and "JSON".
@@ -62,9 +62,9 @@ Once you are finished, a green "Saved" notification will appear in the top right
 
 To see what your Custom Data would look like as JSON, click on the "JSON" tab.
 
-.. _organizations-changing-status:
+.. _organizations-change-status:
 
-Enabling & Disabling Organizations
+Enable & Disable Organizations
 ===================================
 
 If an Organization serves as an Account Store for an Organization, then login attempts to that Organization can be directed to the Organization and its associated Directories and Groups. If the Organization is the only mapping point between your Organization and one or more Directories and Groups, then disabling that Organization will prevent all of the Accounts in those Directories and Groups from logging in.
@@ -87,9 +87,9 @@ Bulk Status Changes
 
 You can change the status of multiple Organizations from the Organization list view. Select as many Organizations as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Enabled" or "Disabled".
 
-.. _organizations-deleting:
+.. _organizations-delete:
 
-Deleting Organizations
+Delete Organizations
 ========================
 
 .. warning::
@@ -106,7 +106,7 @@ You can delete multiple Organizations from the Organization list view. Select as
 
 .. _organizations-account-stores:
 
-Managing an Organization's Account Stores
+Manage an Organization's Account Stores
 =========================================
 
 When viewing the page for a specific Organization, you can see all of its associated Account Stores by clicking on the "Account Stores" link in the left-side navigation panel. This list is composed of all of the **Directories** and **Groups** that have **Account Store Mappings** to this Organization.
@@ -114,13 +114,13 @@ When viewing the page for a specific Organization, you can see all of its associ
 From this view, you can do a number of things:
 
 - Add new Account Stores with the "Add Account Store" in the top right
-- :ref:`Sort Account Stores <organizations-sorting-account-stores>` by login priority
+- :ref:`Sort Account Stores <organizations-sort-account-stores>` by login priority
 - Unmap an Account Store. This will prevent all Accounts within this Account Store from logging in to this Organization.
 - :ref:`Set an Account Store <organizations-default-account-stores>` as the default location for new Accounts and/or Groups
 
-.. _organizations-sorting-account-stores:
+.. _organizations-sort-account-stores:
 
-Sorting Account Stores
+Sort Account Stores
 ----------------------
 
 Every login attempt to your Organization is made against that Organization's mapped Account Stores. The Account Stores in this view are ordered according to the left-most "Priority" column. This priority ranking represents the order in which the Account Stores are checked for every login attempt.
@@ -133,7 +133,7 @@ To change the order of these Account Stores, hover your mouse over the "Priority
 
 .. _organizations-default-account-stores:
 
-Setting Default Account and Groups Locations
+Set Default Account and Groups Locations
 --------------------------------------------
 
 It is possible to set which Account Store should be the default for new Accounts or Groups. This means that if an Account Store is not specified at the time of Account/Group creation, it will automatically go into that Account Store.

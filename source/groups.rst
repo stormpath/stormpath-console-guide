@@ -7,19 +7,19 @@ Groups
 The `Groups page <https://api.stormpath.com/ui2/index.html#/groups>`__ contains the list of Groups in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Groups in the top-right search box
-- :ref:`Add new Groups <groups-creating>` using the "Create Group" button
-- :ref:`Change the status <groups-changing-status>` of one or more Groups to: `Enabled` or `Disabled`
-- :ref:`Delete one or more Groups <groups-deleting>`
-- :ref:`Edit a Group <groups-editing>`
+- :ref:`Add new Groups <groups-create>` using the "Create Group" button
+- :ref:`Change the status <groups-change-status>` of one or more Groups to: `Enabled` or `Disabled`
+- :ref:`Delete one or more Groups <groups-delete>`
+- :ref:`Edit a Group <groups-edit>`
 
-Finding a Group's URL
+Find a Group's URL
 ================================
 
 To find a Group's unique URL, first click on its name from the main list of Groups. Its URL can be found at the top of the Group's page, in the field marked "HREF".
 
 Clicking on this URL will open your Group's information in JSON format and display it in your browser.
 
-.. _groups-creating:
+.. _groups-create:
 
 Creating Groups
 ========================
@@ -35,9 +35,9 @@ Optionally, you can also:
 
 After you have completed this, click **Create** and the "Create Group" dialog will close and you will see your new Group in the list of Groups.
 
-.. _groups-editing:
+.. _groups-edit:
 
-Editing Groups
+Edit Groups
 ========================
 
 To edit a Group, first click on its name from the main list of Groups. This will bring you to the Group's page, with the Group's name displayed on the top.
@@ -62,9 +62,9 @@ Once you are finished, a green "Saved" notification will appear in the top right
 
 To see what your Custom Data would look like as JSON, click on the "JSON" tab.
 
-.. _groups-changing-status:
+.. _groups-change-status:
 
-Enabling & Disabling Groups
+Enable & Disable Groups
 ================================
 
 Groups are one of the resources via which Accounts are mapped to Applications for the purposes of user login. As a result, if a Group has a "Disabled" status then any login attempts made to that Group will fail.
@@ -85,9 +85,9 @@ Bulk Status Changes
 
 You can change the status of multiple Groups from the Group list view. Select as many Groups as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Enabled" or "Disabled".
 
-.. _groups-deleting:
+.. _groups-delete:
 
-Deleting Groups
+Delete Groups
 ========================
 
 .. warning::
@@ -103,7 +103,7 @@ Bulk Group Deletion
 
 You can delete multiple Groups from the Group list view. Select as many Groups as you like using the check boxes in the left-most column, then click on the "Bulk Actions" button. This will open a menu where you can select "Delete Group".
 
-Finding Related Resources
+Find Related Resources
 ================================
 
 When you are looking at the page for a specific Group, the left-side navigation bar has links to lists of resources related to that Group. Specifically, you can find:
@@ -120,14 +120,14 @@ Other Tasks
 
 .. _group-accounts:
 
-Managing a Group's Accounts
+Manage a Group's Accounts
 -----------------------------------
 
 When viewing the page for a specific Group, you can see all of its associated Accounts by clicking on the "Accounts" link in the left-side navigation panel. This view will show you a list of all Accounts that are contained in Account Stores mapped to the Group.
 
 The view itself has all of the same options and behavior as the regular `Accounts <https://api.stormpath.com/ui2/index.html#/accounts>`__ page. For more information about working with Accounts in the Admin Console, please see the :ref:`Accounts chapter <accounts>`.
 
-Managing an Groups's Applications
+Manage an Group's Applications
 --------------------------------
 
 When viewing the page for a specific Group, you can see all of its associated Applications by clicking on the "Applications" link in the left-side navigation panel.
