@@ -32,7 +32,7 @@ You must also enter in a "Name Key". This must be unique across all Organization
 
 You can also optionally enter in a "Description" for the Organization.
 
-After you have completed this, the "Create Organization" dialog will close and you will see your new Organization in the list of Organizations.
+After you have completed this, click **Create** and the "Create Organization" dialog will close and you will see your new Organization in the list of Organizations.
 
 .. _organizations-editing:
 

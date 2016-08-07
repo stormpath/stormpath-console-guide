@@ -34,7 +34,7 @@ Optionally, you can also:
 - Toggle the status from its default "Enabled" status to "Disabled"
 - Enable or disable the automatic creation of a Directory for this Application. If you check "Match Application Name", the Directory's name will be whatever the Application's "Name" is, plus the word "Directory".
 
-After you have completed this, the "Create Application" dialog will close and you will see your new Application in the list of Applications.
+After you have completed this, click **Create** and the "Create Application" dialog will close and you will see your new Application in the list of Applications.
 
 .. _applications-editing:
 

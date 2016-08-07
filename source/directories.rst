@@ -1100,7 +1100,7 @@ Step 4: Configure Your Application in Stormpath
 
 #. Switch back to the `Stormpath Admin Console <https://api.stormpath.com>`__ and go to the **Applications** tab.
 
-#. Select the Application that will be using the Azure  Directory.
+#. Select the Application that will be using the Azure Directory.
 
 #. On the main "Details" page, you will see "Authorized Callback URIs". You should include here a list of the URLs that your users will be redirected to at the end of the SAML authentication flow.
 
