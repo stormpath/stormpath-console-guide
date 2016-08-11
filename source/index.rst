@@ -12,7 +12,7 @@ Welcome to the Stormpath Admin Console Guide
    groups
    accounts
    agents
-   id_site
+   idsite
 
 
 
