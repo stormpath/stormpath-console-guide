@@ -93,6 +93,9 @@ Before you integrate Google Login with Stormpath, you must complete the followin
 
 For more information, please see the `Google OAuth 2.0 documentation <https://developers.google.com/identity/protocols/OAuth2>`__.
 
+Step 1: Create the Google Directory
+"""""""""""""""""""""""""""""""""""
+
 To create a new Google Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
 
 From here you must specify a "Directory Type", which you should change to "Google". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
@@ -112,12 +115,71 @@ Optionally, you can also:
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
+Step 2: Map the Google Directory to your Application
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+In order to enable login via Google, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
+
+Depending on what SDK or Integration you are using, further steps may also be necessary.
+
+.. note::
+
+  Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with Google.
+
+.. todo::
+
+  I feel like this sentence is accurate, necessary, and totally unsatisfactory as is...
+
+At this point, any users that choose to login via Google will go through the Google OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from Google.
+
 .. _create-facebook:
 
 Facebook
 ^^^^^^^^^^^^
 
+Before you integrate Facebook Login with Stormpath, you must complete the following steps:
+
+- Create an application on the `Facebook Developer Site <https://developers.facebook.com/>`__
+- Retrieve your OAuth credentials (App ID and App Secret)
+- Add your application’s private and public root URLs
+
+For more information, please see the `Facebook documentation <https://developers.facebook.com/docs/apps/register>`__.
+
+Step 1: Create the Facebook Directory
+"""""""""""""""""""""""""""""""""""""
+
 To create a new Facebook Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
+From here you must specify a "Directory Type", which you should change to "Facebook". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
+
+Additionally, you must add your Facebook application's:
+
+- Client ID
+- Client Secret
+
+All of these are obtained from `Facebook For Developers <https://developers.facebook.com/>`__.
+
+Optionally, you can also:
+
+- Enter in a "Description" for the Directory.
+- Toggle the status from its default "Enabled" status to "Disabled"
+
+After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
+
+Step 2: Map the Facebook Directory to your Application
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+In order to enable login via Facebook, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
+
+.. note::
+
+  Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with Facebook.
+
+.. todo::
+
+  I feel like this sentence is accurate, necessary, and totally unsatisfactory as is...
+
+At this point, any users that choose to login via Facebook will go through the Facebook OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from Facebook.
 
 .. _create-github:
 
