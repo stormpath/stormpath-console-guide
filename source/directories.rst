@@ -175,10 +175,6 @@ In order to enable login via Facebook, you must also map this Directory to one o
 
   Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with Facebook.
 
-.. todo::
-
-  I feel like this sentence is accurate, necessary, and totally unsatisfactory as is...
-
 At this point, any users that choose to login via Facebook will go through the Facebook OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from Facebook.
 
 .. _create-github:
@@ -186,14 +182,91 @@ At this point, any users that choose to login via Facebook will go through the F
 GitHub
 ^^^^^^
 
+Before you integrate GitHub Login with Stormpath, you must complete the following steps:
+
+- Create an application in the `GitHub Developer Site <https://developer.github.com/>`__
+- Retrieve OAuth Credentials (Client ID and Secret) for your GitHub application
+- Add your application’s redirect URL, which is the URL the user will be returned to after successful authentication.
+
+For more information, please see the `GitHub documentation on registering your app <https://developer.github.com/guides/basics-of-authentication/#registering-your-app>`__.
+
+Step 1: Create the GitHub Directory
+"""""""""""""""""""""""""""""""""""""
+
 To create a new GitHub Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
+From here you must specify a "Directory Type", which you should change to "GitHub". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
+
+Additionally, you must add your GitHub application's:
+
+- Client ID
+- Client Secret
+
+All of these are obtained from `GitHub <https://github.com/settings/developers>`__.
+
+Optionally, you can also:
+
+- Enter in a "Description" for the Directory.
+- Toggle the status from its default "Enabled" status to "Disabled"
+
+After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
+
+Step 2: Map the GitHub Directory to your Application
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+In order to enable login via GitHub, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
+
+.. note::
+
+  Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with GitHub.
+
+At this point, any users that choose to login via GitHub will go through the GitHub OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from GitHub.
 
 .. _create-linkedin:
 
 LinkedIn
 ^^^^^^^^^^^^
 
+Before you integrate LinkedIn Login with Stormpath, you must complete the following steps:
+
+- Create an application in the `LinkedIn Developer Site <https://www.linkedin.com/secure/developer?newapp=>`__
+- Add your application’s redirect URL, which is the URL the user will be returned to after successful authentication.
+- Retrieve OAuth Credentials (Client ID and Secret) for your LinkedIn application
+
+For more information, please see LinkedIn’s `OAuth documentation <https://developer.linkedin.com/docs/oauth2>`__.
+
+Step 1: Create the LinkedIn Directory
+"""""""""""""""""""""""""""""""""""""
+
 To create a new LinkedIn Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
+From here you must specify a "Directory Type", which you should change to "LinkedIn". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
+
+Additionally, you must add your LinkedIn application's:
+
+- Client ID
+- Client Secret
+- Authorized Redirect URI
+
+All of these are obtained from `LinkedIn <https://www.linkedin.com/developer/apps/>`__.
+
+Optionally, you can also:
+
+- Enter in a "Description" for the Directory.
+- Toggle the status from its default "Enabled" status to "Disabled"
+
+After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
+
+Step 2: Map the LinkedIn Directory to your Application
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+In order to enable login via LinkedIn, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
+
+.. note::
+
+  Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with LinkedIn.
+
+At this point, any users that choose to login via LinkedIn will go through the LinkedIn OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from LinkedIn.
 
 .. _directories-create-ldap:
 
