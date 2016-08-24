@@ -167,7 +167,7 @@ Optionally, you can also:
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the Facebook Directory to your Application
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 In order to enable login via Facebook, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
 
@@ -258,7 +258,7 @@ Optionally, you can also:
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the LinkedIn Directory to your Application
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 In order to enable login via LinkedIn, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
 
