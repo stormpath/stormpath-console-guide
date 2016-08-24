@@ -24,6 +24,31 @@ Clicking on this URL will open your Directory's information in JSON format and d
 Create a Directory
 ========================
 
+Directories are top-level containers which contain Accounts and Groups. Users that are created and added directly by your application go into **Cloud** Directories. Users that come in from outside sources, like Social Login, LDAP, or SAML-based Identity Providers, are contained in **Mirror** Directories.
+
+You will need as many Mirror Directories as you have sources for users. This means that, if you would like users to log-in via Facebook, then you will need to add a Facebook Directory. If you would also like your users to be able to log in using Salesforce, then you will need also need a SAML Directory configured for Salesforce.
+
+This section will tell you how to:
+
+- :ref:`Create a Cloud Directory <directories-create-cloud>`
+- :ref:`Create a Social Directory <directories-create-social>`
+
+  - :ref:`Google <create-google>`
+  - :ref:`Facebook <create-facebook>`
+  - :ref:`GitHub <create-github>`
+  - :ref:`LinkedIn <create-linkedin>`
+
+- :ref:`Create an LDAP Directory <directories-create-ldap>`
+
+- :ref:`Create a SAML Directory <directories-create-saml>`
+
+  - :ref:`Salesforce <create-salesforce>`
+  - :ref:`OneLogin <create-onelogin>`
+  - :ref:`Okta <create-okta>`
+  - :ref:`Ping Identity <create-ping>`
+  - :ref:`ADFS <create-adfs>`
+  - :ref:`Azure AD <create-azure>`
+
 .. _directories-create-cloud:
 
 Create a Cloud Directory
@@ -34,26 +59,38 @@ Create a Cloud Directory
 Create a Social Directory
 ---------------------------
 
+.. _create-google:
+
 Google
 ^^^^^^
+
+.. _create-facebook:
 
 Facebook
 ^^^^^^^^^^^^
 
+.. _create-github:
+
 GitHub
 ^^^^^^
+
+.. _create-linkedin:
 
 LinkedIn
 ^^^^^^^^^^^^
 
-.. _directories-creating-ldap:
+.. _directories-create-ldap:
 
 Create an LDAP Directory
 --------------------------
 
-Link to agents.rst
+In order to allow your users to login via external LDAP directories, including Active Directory, you will need at least an "Advanced" subscription or higher. For more information, please see the `Stormpath pricing page <https://stormpath.com/pricing>`__.
 
-.. _directories-creating-saml:
+To create an LDAP Directory, start by navigating to the `Agents <https://api.stormpath.com/ui2/index.html#/agents>`__ section of the Admin Console.
+
+For further instructions, see the :ref:`Agents section <agents>` of this guide.
+
+.. _directories-create-saml:
 
 Create a SAML Directory
 -------------------------
@@ -68,12 +105,12 @@ This section will show you how to set-up Stormpath to allow your users to log in
 
 - A developer Account with one of the following Identity Providers who support SAML:
 
-    - :ref:`Salesforce <salesforce>`
-    - :ref:`OneLogin <onelogin>`
-    - :ref:`Okta <okta>`
-    - :ref:`Ping Identity <ping>`
+    - :ref:`Salesforce <create-salesforce>`
+    - :ref:`OneLogin <create-onelogin>`
+    - :ref:`Okta <create-okta>`
+    - :ref:`Ping Identity <create-ping>`
 
-We also provide authentication against an Active Directory via :ref:`ADFS SAML <adfs>`.
+We also provide authentication against an Active Directory via :ref:`ADFS SAML <create-adfs>` and :ref:`Azure AD <create-azure>`.
 
 .. note::
 
@@ -81,7 +118,7 @@ We also provide authentication against an Active Directory via :ref:`ADFS SAML <
 
   Currently these instructions only cover SP-initiated SAML and not the IdP-initiated flow configuration.
 
-.. _salesforce:
+.. _create-salesforce:
 
 Salesforce
 ^^^^^^^^^^
@@ -299,7 +336,7 @@ For example, using the custom attribute from Step 4.2 above:
 
 If a user now logs in, Stormpath will take the ``firstname`` SAML attribute and map it to the ``givenName`` field on the Stormpath Account resource.
 
-.. _onelogin:
+.. _create-onelogin:
 
 OneLogin
 ^^^^^^^^
@@ -491,7 +528,7 @@ For example, you could enter:
 
 If a user now logs in, Stormpath will take the ``User.FirstName`` attribute and map it to the ``givenName`` field on the Account resource.
 
-.. _okta:
+.. _create-okta:
 
 Okta
 ^^^^
@@ -684,7 +721,7 @@ If a user now logs in, Stormpath will take the ``firstName`` attribute and map i
 
   If you do choose to enter in an "Attribute Name Format" in Stormpath, it must match the SAML "NameFormat" passed by Okta. To ensure that you are entering the right one you can click on **Preview the SAML Assertion** on the "Configure SAML" page in your Okta application.
 
-.. _ping:
+.. _create-ping:
 
 Ping
 ^^^^^^^^^^
@@ -870,7 +907,7 @@ For example, you could enter, using the custom attribute from Step 4.2 above:
 
 If a user now logs in, Stormpath will take the ``firstname`` attribute and map it to the ``givenName`` field on the Account resource.
 
-.. _adfs:
+.. _create-adfs:
 
 Active Directory Federation Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1013,7 +1050,7 @@ By default, the only user information that is passed by ADFS is the User Princip
 
 #. Here you can specify which of the ADFS Claims you would like to map to which Stormpath Account attribute. For example, if you mapped the LDAP Attribute "Given-Name" to the ADFS Claim "firstName", then you would put the "Attribute Name" as "firstName" and the "Stormpath Field Name" as "surname".
 
-.. _azure:
+.. _create-azure:
 
 Azure Active Directory
 ^^^^^^^^^^^^^^^^^^^^^^^
