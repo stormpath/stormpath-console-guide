@@ -54,30 +54,84 @@ This section will tell you how to:
 Create a Cloud Directory
 --------------------------
 
+To create a new Cloud Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
+From here you must specify a "Directory Type", which you should leave as "Cloud". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
+
+Optionally, you can also:
+
+- Enter in a "Description" for the Directory.
+- Toggle the status from its default "Enabled" status to "Disabled"
+
+After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
+
 .. _directories-create-social:
 
 Create a Social Directory
 ---------------------------
+
+Currently, Stormpath allows your users to log in using their credentials from the following Social Login Providers:
+
+- :ref:`Google <create-google>`
+- :ref:`Facebook <create-facebook>`
+- :ref:`GitHub <create-github>`
+- :ref:`LinkedIn <create-linkedin>`
+
+In order to configure this, you will need to input information about the Social Login Provider into a newly-created Stormpath Directory. Every Provider will need its own Directory (i.e. if you want users to log in with Google and Facebook, then you will have to create a Directory for each).
 
 .. _create-google:
 
 Google
 ^^^^^^
 
+Before you integrate Google Login with Stormpath, you must complete the following steps:
+
+- Create an application in the `Google Developer Console <https://console.developers.google.com/start>`__
+- Enable Google Login for your Google application
+- Retrieve the OAuth Credentials (Client ID and Secret) for your Google application
+- Add your application’s redirect URL, which is the URL the user will be returned to after successful authentication.
+
+For more information, please see the `Google OAuth 2.0 documentation <https://developers.google.com/identity/protocols/OAuth2>`__.
+
+To create a new Google Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
+From here you must specify a "Directory Type", which you should change to "Google". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
+
+Additionally, you must add your Google application's:
+
+- Client ID
+- Client Secret
+- Authorized Redirect URI
+
+All of these are obtained from the `Google Developer Console <https://console.developers.google.com/start>`__.
+
+Optionally, you can also:
+
+- Enter in a "Description" for the Directory.
+- Toggle the status from its default "Enabled" status to "Disabled"
+
+After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
+
 .. _create-facebook:
 
 Facebook
 ^^^^^^^^^^^^
+
+To create a new Facebook Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
 
 .. _create-github:
 
 GitHub
 ^^^^^^
 
+To create a new GitHub Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
 .. _create-linkedin:
 
 LinkedIn
 ^^^^^^^^^^^^
+
+To create a new LinkedIn Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
 
 .. _directories-create-ldap:
 
