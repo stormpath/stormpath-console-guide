@@ -23,6 +23,8 @@ These instructions assume that you have two things:
     - :ref:`Okta <create-okta>`
     - :ref:`Ping Identity <create-ping>`
 
+We also provide authentication against an Active Directory via :ref:`ADFS SAML <create-adfs>` and :ref:`Azure AD <create-azure>`.
+
 .. note::
 
   These are not the only SAML-enabled Identity Providers that Stormpath can integrate with, but they are the ones that have been tested and verified as working.
@@ -562,8 +564,6 @@ We will now complete the final steps in the Stormpath Admin Console: adding one 
 #. Click **Create Mappings**.
 
 You have now completed the initial steps of setting-up login via Okta.
-
-.. _okta-attribute-mapping:
 
 Step 6: Configure Your Attribute Mappings
 """""""""""""""""""""""""""""""""""""""""
