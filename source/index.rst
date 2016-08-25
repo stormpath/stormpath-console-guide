@@ -13,6 +13,8 @@ Welcome to the Stormpath Admin Console Guide
    accounts
    agents
    idsite
+   Appendix: SAML (Service Provider Initiated) <directories-saml-sp>
+   Appendix: SAML (Identity Provider Initiated) <directories-saml-idp>
 
 
 
