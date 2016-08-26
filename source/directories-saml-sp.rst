@@ -1,20 +1,28 @@
 .. _directories-saml-sp:
 
-********************************************
-Appendix: SAML (Service Provider Initiated)
-********************************************
+***************
+Appendix: SAML
+***************
 
-This section will show you how to set-up Stormpath to allow your users to log in with a SAML-enabled Identity Provider (IdP) via the **Service Provider Initiated flow**.
+This section will show you how to set-up Stormpath to allow your users to log in with a SAML-enabled Identity Provider via either the Service Provider (SP) or Identity Provider (IdP) Initiated flows. Examples of Identity Providers that you can integrate with include Salesforce and OneLogin.
 
-**What is the Service Provider Initiated flow?**
+**What are the Service Provider and Identity Provider Initiated flows?**
 
-In the Service Provider Initiated flow, the user starts at a login page (either ID Site or one inside a Stormpath-powered application), then is redirected to the Identity Provider. After authenticating with the Identity Provider, the user is returned to the application in an authenticate state.
+In the Service Provider (SP) -initiated flow, the user starts at your application. From a login page (either ID Site or one inside your Stormpath-powered application), the user is redirected to the Identity Provider. After authenticating with the Identity Provider, the user is returned to the application in an authenticate state.
+
+In the Identity Provider (IdP) Initiated flow, the user starts at the Identity Provider. After logging-in to the IdP, the user selects the Stormpath-enabled web application from within the IdP’s site, and is redirected to the application in an authenticated state.
+
+For more, see the `REST Product Guide <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#the-stormpath-saml-flow>`.
+
+**Configuring Service Provider vs Identity Provider Initiated**
+
+The only difference in configuration steps between the two kinds of flows is that the Identity Provider-initiated flow requires you to generate a Default Relay State. For more information, see the configuration steps for your particular Identity Provider below.
 
 **Requirements**
 
 These instructions assume that you have two things:
 
-- A Stormpath account with at least an Advanced plan
+- A Stormpath account with at least an **Advanced plan**
 
 - A developer Account with one of the following Identity Providers who support SAML:
 
@@ -23,16 +31,24 @@ These instructions assume that you have two things:
     - :ref:`Okta <create-okta>`
     - :ref:`Ping Identity <create-ping>`
 
-We also provide authentication against an Active Directory via :ref:`ADFS SAML <create-adfs>` and :ref:`Azure AD <create-azure>`.
+We also provide authentication against an **Active Directory** via :ref:`ADFS SAML <create-adfs>` and :ref:`Azure AD <create-azure>`.
 
 .. note::
 
   These are not the only SAML-enabled Identity Providers that Stormpath can integrate with, but they are the ones that have been tested and verified as working.
 
+  Currently, IdP-initiated SAML configuration instructions are only available for:
+
+  - OneLogin
+  - Okta
+  - Ping Identity
+
 .. _create-salesforce:
 
 Salesforce
 ^^^^^^^^^^
+
+Currently, Stormpath's Salesforce integration is only compatible with the Service Provider-initiated flow.
 
 .. contents::
     :local:
