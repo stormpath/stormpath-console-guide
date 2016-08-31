@@ -206,7 +206,7 @@ When a new Account logs in via SAML, Salesforce sends along a number of SAML att
 
 If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that Salesforce sends by retrieving the new user Account that was created inside Stormpath.
 
-Specifically, you want that Account's Provider Data:
+Specifically, you want that Account's ``providerData`` resource, which you can see by clicking on the "HREF" link on the Account's main page, then following the `providerData` `href` :
 
 .. code-block:: json
 
@@ -267,6 +267,12 @@ If a user now logs in, Stormpath will take the ``firstname`` SAML attribute and 
 
 OneLogin
 ^^^^^^^^
+
+OneLogin is compatible with both the Service Provider and Identity Provider -initiated flows. The steps are identical except where indicated.
+
+.. todo::
+
+  Which one?
 
 .. contents::
     :local:
@@ -349,7 +355,7 @@ We will now create your SAML Directory in Stormpath, using the values you gather
 
 #. Find and click on your new SAML Directory.
 
-#. Copy the "Assertion Consumer Service URL" found in the "SAML Identity Provider Configuration" section
+#. Copy the "Assertion Consumer Service URL" found in the "Identity Provider" tab of the "SAML Configuration" section.
 
 .. note::
 
@@ -357,14 +363,33 @@ We will now create your SAML Directory in Stormpath, using the values you gather
 
 We will now input this value into the Identity Provider.
 
+3.3. (IdP-initiated Flow Only) Generate a RelayState
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+If you are looking to use the IdP-initiated flow, you will also need to click on **Generate Default RelayState**.
+
+This will bring up a dialog box where you will have to specify the Application that you are generating the RelayState for, as well as the API Key that this Application uses.
+
+Optionally, you can also indicate which Organization and Callback URI will use this RelayState.
+
+.. note::
+
+  All of the values here must be in some way associated to your Directory. So the Application you specify must have this Directory as an Account Store, the Callback URI should be one from the Application's list of URIs, etc.
+
+Once you have selected all of the desired values, click **Generate**.
+
+This will bring up the generated Default RelayState JWT. You will need this in the next step.
+
 Step 4: Configure Your Service Provider in OneLogin
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-#. Back in your OneLogin App's settings page (found under **Apps** > **Company Apps**), click **Configuration** in the App's navigation pane.
+1. Back in your OneLogin App's settings page (found under **Apps** > **Company Apps**), click **Configuration** in the App's navigation pane.
 
-#. Copy your Directory's "Assertion Consumer Service URL" into both the "ACS (Consumer) URL Validator" and "ACS (Consumer) URL" fields.
+2. Copy your Directory's "Assertion Consumer Service URL" into both the "ACS (Consumer) URL Validator" and "ACS (Consumer) URL" fields.
 
-#. Now click on **Parameters** in the App navigation pane. On this page, you need to ensure that your "Email (SAML NameID)" field has the value "Email", which it should by default.
+3. *(IdP-initiated Flow Only)* Copy the RelayState JWT from Step 3.3 into the "RelayState" box.
+
+4. Now click on **Parameters** in the App navigation pane. On this page, you need to ensure that your "Email (SAML NameID)" field has the value "Email", which it should by default.
 
 Step 5: Configure Your Application in Stormpath
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -397,7 +422,7 @@ When a new Account logs in via SAML, OneLogin sends along a number of SAML attri
 
 If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that OneLogin sends by retrieving the new user Account that was created inside Stormpath.
 
-Specifically, you want that Account's ``providerData`` resource:
+Specifically, you want that Account's ``providerData`` resource, which you can see by clicking on the "HREF" link on the Account's main page, then following the `providerData` `href` :
 
 .. code-block:: json
 
@@ -459,6 +484,8 @@ If a user now logs in, Stormpath will take the ``User.FirstName`` attribute and 
 
 Okta
 ^^^^
+
+Okta is compatible with both the Service Provider and Identity Provider -initiated flows. The steps are identical except where indicated.
 
 .. contents::
     :local:
@@ -549,6 +576,23 @@ In the "SAML Identity Provider Configuration" section:
 
 We will now input these values into the Identity Provider.
 
+3.3. (IdP-initiated Flow Only) Generate a RelayState
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+If you are looking to use the IdP-initiated flow, you will also need to click on **Generate Default RelayState**.
+
+This will bring up a dialog box where you will have to specify the Application that you are generating the RelayState for, as well as the API Key that this Application uses.
+
+Optionally, you can also indicate which Organization and Callback URI will use this RelayState.
+
+.. note::
+
+  All of the values here must be in some way associated to your Directory. So the Application you specify must have this Directory as an Account Store, the Callback URI should be one from the Application's list of URIs, etc.
+
+Once you have selected all of the desired values, click **Generate**.
+
+This will bring up the generated Default RelayState JWT. You will need this in the next step.
+
 Step 4: Configure Your Service Provider in Okta
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -559,6 +603,8 @@ Step 4: Configure Your Service Provider in Okta
 #. You will now be on the "Configure SAML" page. Copy your Directory's "Assertion Consumer Service URL" into the "Single sign on URL" field, replacing the dummy value.
 
 #. Copy the "Entity ID" URN into the "Audience URI (SP Entity ID)", also replacing the dummy value.
+
+#. *(IdP-initiated Flow Only)* Copy the RelayState JWT from Step 3.3 into the "Default RelayState" box.
 
 Step 5: Configure Your Application in Stormpath
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -591,8 +637,7 @@ When a new Account logs in via SAML, Okta sends along a number of SAML attribute
 
 If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that Okta sends by retrieving the new user Account that was created inside Stormpath.
 
-Specifically, you want that Account's ``providerData`` resource:
-
+Specifically, you want that Account's ``providerData`` resource, which you can see by clicking on the "HREF" link on the Account's main page, then following the `providerData` `href` :
 .. code-block:: json
 
   {
@@ -650,6 +695,8 @@ If a user now logs in, Stormpath will take the ``firstName`` attribute and map i
 
 Ping
 ^^^^^^^^^^
+
+Ping is only compatible with the Service Provider-initiated flow.
 
 .. contents::
     :local:
@@ -782,7 +829,7 @@ When a new Account logs in via SAML, Ping sends along a number of SAML attribute
 
 If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that Ping sends by retrieving the new user Account that was created inside Stormpath.
 
-Specifically, you want that Account's ``providerData`` resource:
+Specifically, you want that Account's ``providerData`` resource, which you can see by clicking on the "HREF" link on the Account's main page, then following the `providerData` `href` :
 
 .. code-block:: json
 
