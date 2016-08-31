@@ -388,19 +388,54 @@ The view itself has all of the same options and behavior as the regular `Account
 Set-up Workflows
 --------------------
 
+Workflows define how various processes take place in Stormpath. The two primary workflows that exist right are:
+
+- Account Registration & Verification
+- Password Reset
+
+The settings for these can be found by going to a specific Directory's page, then clicking on **Workflows** on the left.
+
+.. note::
+
+  Workflows are only available on Cloud Directories.
+
 .. _directories-workflows-registration:
 
 Account Registration & Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This workflow controls how Accounts are created and verified in your Directory. The three email components of this workflow each have their own tab:
+
+- Verification Email
+- Verification Success Email
+- Welcome Email
+
+All three emails are disabled by default.
+
 Verification Email
 """"""""""""""""""
+
+If this email is enabled, a new user will need to visit their email inbox to click a link to verify their Account. Account verification is initialized automatically during Account creation. Accounts in Directories that have the Verification Email enabled will be created with an ``UNVERIFIED`` status.
+
+From the "Verification Email" tab, you can configure the various parts of this email:
+
+- **Enable / disable** this email
+- **Link Base URL:** This is the URL that the verification token will be appended to in the email. It should point to an endpoint where you would like your users to end up after verifying their email address.
+- **From Name:** This is the name that will appear as part of the email's "From" field.
+- **From Email Address:** This is the email address that will appear as part of the email's "From" field. Any responses to this email will go to this address. *Modifying this requires a subscription level above Developer**
+- **Subject** The "Subject" of the email.
+- **Message Format:** Plain text, HTML, or both (i.e. ``multipart/alternative``)
+- **Message:** This text box contains the contents of your email. Stormpath emails use macros. For more information about these, please see the `REST API Guide <https://docs.stormpath.com/rest/product-guide/latest/accnt_mgmt.html#using-email-macros>`__.
 
 Verification Success Email
 """"""""""""""""""""""""""
 
+If this email is enabled, a success email to the Account's email when the Account has been verified.
+
 Welcome Email
 """""""""""""
+
+If this email is enabled, a email will be sent when a new Account is created (Verification Email Disabled) or when the account is verified (Verification Email Enabled). This email can be used to send important information about your application to the user.
 
 .. _directories-workflows-password:
 
