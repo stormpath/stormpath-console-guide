@@ -638,6 +638,7 @@ When a new Account logs in via SAML, Okta sends along a number of SAML attribute
 If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that Okta sends by retrieving the new user Account that was created inside Stormpath.
 
 Specifically, you want that Account's ``providerData`` resource, which you can see by clicking on the "HREF" link on the Account's main page, then following the `providerData` `href` :
+
 .. code-block:: json
 
   {

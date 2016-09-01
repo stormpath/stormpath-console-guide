@@ -4,6 +4,7 @@ Welcome to the Stormpath Admin Console Guide
 .. toctree::
    :maxdepth: 2
 
+   getting-started
    home
    administration
    applications
@@ -13,10 +14,7 @@ Welcome to the Stormpath Admin Console Guide
    accounts
    agents
    idsite
-   Appendix: SAML (Service Provider Initiated) <directories-saml-sp>
-   Appendix: SAML (Identity Provider Initiated) <directories-saml-idp>
-
-
+   Appendix: SAML (Service Provider Initiated) <appendix-saml>
 
 Indices and tables
 ==================
