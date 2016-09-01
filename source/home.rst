@@ -1,7 +1,7 @@
 .. _home:
 
 *********************
-Getting Started: Home
+The Home Page
 *********************
 
 The Home page is the first page that you see upon logging in to the Stormpath Admin Console.

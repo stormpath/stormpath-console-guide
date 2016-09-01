@@ -4,6 +4,8 @@
 Groups
 ******
 
+Groups are collections of Accounts found within a Directory. They can be thought of as labels applied to Accounts. Aside from the relatively simple task of grouping together Accounts, Groups can also be used to implement “roles” for authorization purposes.
+
 The `Groups page <https://api.stormpath.com/ui2/index.html#/groups>`__ contains the list of Groups in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Groups in the top-right search box

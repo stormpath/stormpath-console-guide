@@ -4,6 +4,10 @@
 Accounts
 ********
 
+An Account is a unique identity within a Directory, with a unique username and email. An Account can log in to an Application using either the email or username. Accounts can represent your end users (people), but they can also be used to represent services, daemons, processes, or any “entity” that needs to log in to a Stormpath-enabled application.
+
+Additionally, an Account may only exist in a single Directory but may be associated with multiple Groups owned by that Directory.
+
 The `Accounts page <https://api.stormpath.com/ui2/index.html#/accounts>`__ contains the list of Accounts in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Accounts in the top-right search box

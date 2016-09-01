@@ -4,6 +4,8 @@
 Applications
 ************
 
+An Application resource in Stormpath models your application that uses Stormpath. You control who may log in to your application by assigning (or ‘mapping’) one or more Directory, Group, or Organization resources to your Application resource. The Accounts in these associated Directories and Groups collectively form your application’s user base.
+
 The `Applications page <https://api.stormpath.com/ui2/index.html#/applications>`__ contains the list of Applications in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Applications in the top-right search box

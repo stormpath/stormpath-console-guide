@@ -4,6 +4,8 @@
 Directories
 ***********
 
+The Directory resource is a top-level container for Account and Group resources. A Directory also manages security policies (like password strength) for the Accounts it contains. Directories can be used to cleanly manage segmented user Account populations. For example, you might use one Directory for company employees and another Directory for customers, each with its own security policies.
+
 The `Directories page <https://api.stormpath.com/ui2/index.html#/directorys>`__ contains the list of Directories in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Directories in the top-right search box

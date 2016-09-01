@@ -4,6 +4,10 @@
 Organizations
 *************
 
+The Organization resource is two things: A top-level container for both Directories and Groups, as well as a pseudo-Account Store that can be mapped to an Application (just like a Directory or Group) for the purposes of user login. Unlike Directories and Groups, however, they do not themselves own Accounts, and Accounts and Groups cannot be associated to them without also being associated with a Directory.
+
+Organizations are primarily intended to represent “tenants” in multi-tenant applications.
+
 The `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations>`__ contains the list of Organizations in your Stormpath Tenant. On this page you can quickly:
 
 - Search for Organizations in the top-right search box
@@ -12,7 +16,7 @@ The `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations
 - :ref:`Delete one or more Organizations <organizations-delete>`
 - :ref:`Edit an Organization <Organizations-edit>`
 
-Find a Organization's URL
+Find an Organization's URL
 ================================
 
 To find an Organization's unique URL, first click on its name from the main list of Organizations. Its URL can be found at the top of the Organization's page, in the field marked "HREF".
@@ -51,7 +55,7 @@ Here you can edit the Organization's:
 
 On the left-hand side you will see a link to the Organization's Account Stores. For more information, see  :ref:`organizations-account-stores` below.
 
-AddCustom Data to an Organization
+Add Custom Data to an Organization
 --------------------------------------
 
 In the "Custom Data" section of the Organization page, you will see two tabs: "Editor" and "JSON".
