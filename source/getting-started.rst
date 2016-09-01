@@ -137,8 +137,35 @@ Add Some Custom Data to the Group
 
 Primary resources in Stormpath, like Applications, Directories, Groups and Accounts, have Custom Data resources associated with them. Custom Data is able to hold arbitrary data in JSON format. A stored value can be a string, boolean, or number value, as well as an array or entire JSON object.
 
+In this case, you will use the Group's Custom Data resource to store some permissions which you would like all "Regular Users" in your application to have.
+
+The permissions are as follows:
+
+.. code-block:: none
+
+  "access_settings": false
+  "page_crud": "disabled"
+
+To add these to our Group, you go back to the Group's main page by clicking on **Details**.
+
+..figure::
+
+On this page you click on the chevron in the Custom Data Editor.
+
+From this menu, select "Boolean". For "Name" enter in "access_admin_settings", and for the value select "False".
+
+Click on the chevron again, and this time select "String". For "Name" enter in "page_crud" and for the value type "disabled".
+
+These values are now available on this Group for your application to use as part of its authorization process.
+
 Create an API Key
 =================
+
+Go back to the Home page by clicking on the "Home" tab at the top.
+
+On this page, click **Create API Key**.
+
+This will bring up the "Create API Key" dialog. Once you have read and understood it, click on **Create API Key**, and the API Key file will be downloaded to your computer.
 
 Select an SDK/Integration
 =========================
