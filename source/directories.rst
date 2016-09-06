@@ -115,6 +115,11 @@ Optionally, you can also:
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
 
+.. figure:: images/directories/directories_create_google.png
+  :align: center
+  :scale: 100%
+  :alt: Google Directory
+
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the Google Directory to your Application
@@ -166,6 +171,11 @@ Optionally, you can also:
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
 
+.. figure:: images/directories/directories_create_fb.png
+  :align: center
+  :scale: 100%
+  :alt: Facebook Directory
+
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the Facebook Directory to your Application
@@ -210,6 +220,11 @@ Optionally, you can also:
 
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
+
+.. figure:: images/directories/directories_create_github.png
+  :align: center
+  :scale: 100%
+  :alt: GitHub Directory
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
@@ -256,6 +271,11 @@ Optionally, you can also:
 
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
+
+.. figure:: images/directories/directories_create_linkedin.png
+  :align: center
+  :scale: 100%
+  :alt: LinkedIn Directory
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
