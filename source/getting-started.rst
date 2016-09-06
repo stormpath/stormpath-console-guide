@@ -38,11 +38,17 @@ The Application resource represents your real-world application that communicate
 
 From `the Home page <https://api.stormpath.com/ui2/index.html#/>`__, click on the "Applications" tab.
 
-..figure::
+.. figure:: images/gettingstarted/getting_started_app_tab.png
+  :align: center
+  :scale: 100%
+  :alt: Application Tab
 
 The `main Applications page <https://api.stormpath.com/ui2/index.html#/>`__ shows you the list view of all of your Applications. From here, click **Create Application**.
 
-..figure::
+.. figure:: images/gettingstarted/getting_started_create_app.png
+  :align: center
+  :scale: 100%
+  :alt: Create Application Button
 
 This will bring up the "Create Application" dialog. Here you can enter whatever information you want, the only mandatory field is the "Name". Be sure to keep the "Create new Directory" box checked. This means that when we create our Application, we will also create a new Directory to store all of its user Accounts.
 
@@ -158,17 +164,7 @@ Click on the chevron again, and this time select "String". For "Name" enter in "
 
 These values are now available on this Group for your application to use as part of its authorization process.
 
-Create an API Key
-=================
-
-Go back to the Home page by clicking on the "Home" tab at the top.
-
-On this page, click **Create API Key**.
-
-This will bring up the "Create API Key" dialog. Once you have read and understood it, click on **Create API Key**, and the API Key file will be downloaded to your computer.
-
-Select an SDK/Integration
+Next Steps
 =========================
 
-Select the SDK/Integration of my choice
-and follow the quick start
+What can you do now?
