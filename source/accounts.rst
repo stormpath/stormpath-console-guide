@@ -107,10 +107,14 @@ Manage Account API Keys
 
 In the "API Keys" section you can:
 
-- View existing API Keys (ID only)
-- Enable and disable existing API Keys: Disabling an API key will prevent it from being used to authenticate calls made to your Tenant.
-- Delete existing API keys: Deleting will prevent it from being used to authenticate calls made to your Tenant.
-- Create new API keys: This will create `apiKey-{apiKeyId}.properties` file which will be downloaded to your computer. Inside this file you will find a Stormpath API key ID and Secret that can be used to authenticate calls made by this Account to your Stormpath Tenant.
+- **View existing API Keys** (ID only)
+- **Enable and disable existing API Keys:** Disabling an API key will prevent it from being used to authenticate calls made to your Tenant.
+- **Delete existing API keys:** Deleting will prevent it from being used to authenticate calls made to your Tenant.
+- **Create new API keys:** This will create an ``apiKey-{apiKeyId}.properties`` file which will be downloaded to your computer. Inside this file you will find a Stormpath API key ID and Secret that can be used to authenticate calls made by this Account to your Stormpath Tenant.
+
+.. note::
+
+  For more information about how to use API Keys, see one of our `language-specific Quickstarts <https://docs.stormpath.com/home/>`__.
 
 .. _accounts-change-status:
 
@@ -210,3 +214,5 @@ You can also **delete** any tokens. To delete a token, either click **Delete** i
 .. note::
 
   Deleting an Access Token does not delete the Refresh Token that was generated alongside it.
+
+For more information about OAuth tokens in Stormpath, please see `the REST Product Guide <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#configuring-token-based-authentication>`__.

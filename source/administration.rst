@@ -18,7 +18,7 @@ Wherever you are in the Stormpath Admin Console, you will always see the Admin M
 Subscription Levels
 =======================
 
-The `My Subscription page <https://api.stormpath.com/ui2/index.html#/admins>`__ will tell you more about your current subscription with Stormpath, and also allow you to change it.
+The `My Subscription page <https://api.stormpath.com/ui2/index.html#/subscription>`__ will tell you more about your current subscription with Stormpath, and also allow you to change it.
 
 When the page opens you will land on the tab for your current Subscription tier. There will also be a green notice indicating that this is your current plan.
 
@@ -51,6 +51,8 @@ Billing
 =======================
 
 The `Billing page <https://api.stormpath.com/ui2/index.html#/billing>`__ is where you can manage the credit card, if any, that you use to pay for your Stormpath subscription. If you are currently on a free tier, you will not see any credit cards here.
+
+If you would like to remove your credit card information, please `contact support <support@stormpath.com>`__.
 
 .. _admin-api-keys:
 

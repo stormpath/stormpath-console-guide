@@ -30,13 +30,13 @@ Create Organizations
 
 To create a new Organization, start by clicking on **Create Organization** in the top right of the main `Organizations page <https://api.stormpath.com/ui2/index.html#/organizations>`__. This will bring up the "Create Organization" dialog.
 
-From here you must enter in a "Name" for your Organization.
+From here you must enter in a "Name" for your Organization. The name must be unique within your Stormpath Tenant. The uniqueness constraint is case insensitive.
 
-You must also enter in a "Name Key". This must be unique across all Organizations within your Stormpath Tenant and must follow `DNS hostname rules <http://www.ietf.org/rfc/rfc0952.txt>`__. That is, it may only consist of: ``a-z``, ``0-9``, and ``-``. It must not start or end with a hyphen. The uniqueness constraint is case insensitive.
+You must also enter in a "Name Key". This is a shorter, URL-friendly identifier for your Organization. Just like the "Name" it must be unique across all Organizations within your Stormpath Tenant. Unlike the "Name" it must also follow `DNS hostname rules <http://www.ietf.org/rfc/rfc0952.txt>`__. That is, it may only consist of: ``a-z``, ``0-9``, and ``-``. It must not start or end with a hyphen. The uniqueness constraint is case insensitive.
 
 You can also optionally enter in a "Description" for the Organization.
 
-After you have completed this, click **Create** and the "Create Organization" dialog will close and you will see your new Organization in the list of Organizations.
+After you have completed this, click **Create** and the "Create Organization" dialog will close and you will see your new Organization in the main list view.
 
 .. _organizations-edit:
 
