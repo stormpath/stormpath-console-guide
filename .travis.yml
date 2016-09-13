@@ -5,7 +5,7 @@ python:
 install:
 - pip install -U Sphinx sphinx_rtd_theme
 script:
-- make allhtml
+- make html
 after_success:
 - CURRENT_HASH=`git rev-parse HEAD`
 - export RELEASE_VERSION=`git tag | tail -n 1`
