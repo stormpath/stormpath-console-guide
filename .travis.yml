@@ -11,16 +11,16 @@ after_success:
 - export RELEASE_VERSION=`git tag | tail -n 1`
 - RELEASE_HASH=`git rev-list $RELEASE_VERSION -n 1`
 - if [ "$CURRENT_HASH" = "$RELEASE_HASH"  ]; then export DEPLOY_DOCS=true; fi
-- test -z "$DEPLOY_DOCS" || openssl aes-256-cbc -K $encrypted_15c7e38b27fc_key -iv $encrypted_15c7e38b27fc_iv
-  -in stormpath_documentation_auto_doc_build.enc -out ~/.ssh/id_rsa -d
 - test -z "$DEPLOY_DOCS" || chmod 600 ~/.ssh/id_rsa
 - test -z "$DEPLOY_DOCS" || git config --global user.email "evangelists@stormpath.com"
-- test -z "$DEPLOY_DOCS" || git config --global user.name "stormpath-console-guide Auto Doc Build"
+- test -z "$DEPLOY_DOCS" || git config --global user.name "stormpath-console-guide
+  Auto Doc Build"
 - test -z "$DEPLOY_DOCS" || git clone git@github.com:stormpath/stormpath.github.io.git
 - test -z "$DEPLOY_DOCS" || cd stormpath.github.io
 - test -z "$DEPLOY_DOCS" || git fetch origin source:source
 - test -z "$DEPLOY_DOCS" || git checkout source
-- test -z "$DEPLOY_DOCS" || rm -rf source/console/product-guide/latest && mkdir -p source/rest/product-guide && cp -r ../build/html source/console/product-guide/latest
+- test -z "$DEPLOY_DOCS" || rm -rf source/console/product-guide/latest && mkdir -p
+  source/rest/product-guide && cp -r ../build/html source/console/product-guide/latest
 - test -z "$DEPLOY_DOCS" || git add --all
 - test -z "$DEPLOY_DOCS" || git commit -m "stormpath-console-guide release $RELEASE_VERSION"
 - test -z "$DEPLOY_DOCS" || git push origin source
@@ -35,3 +35,5 @@ after_success:
 - test -z "$DEPLOY_DOCS" || git pull --no-edit -s recursive -X theirs https://github.com/stormpath/stormpath.github.io.git
 - test -z "$DEPLOY_DOCS" || cd ..
 - test -z "$DEPLOY_DOCS" || rake deploy
+before_install:
+- openssl aes-256-cbc -K $encrypted_05c7a36dde79_key -iv $encrypted_05c7a36dde79_iv -in keypair.enc -out ~/.ssh/id_rsa -d
