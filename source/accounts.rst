@@ -229,5 +229,22 @@ Here you will see a list of all of the Accounts that are linked to this Account.
 From this view you can:
 
 - Search the linked Accounts using the search box in the top right
-- Link this Account to another Account in the same Directory.
+- Link this Account to another Account in the same Directory
 - Unlink any existing linked Accounts
+
+For more information about Account Linking, please see `the REST Product Guide's Account Management chapter <https://docs.stormpath.com/rest/product-guide/latest/accnt_mgmt.html#account-linking>`__.
+
+Managing an Account's Factors
+-----------------------------
+
+When viewing the page for a specific Account, you can see all of its Factors by clicking on the "Factors" link in the left-side navigation panel.
+
+Here you will see a list of all of the Multi-Factor Authentication Factors that are associated with this Account.
+
+From this view you can:
+
+- Search the Factors using the search box in the top right
+- Add a new SMS factor
+- Remove any existing Factors
+
+For more information about Multi-Factor Authentication, please see `the REST Product Guide's Authentication chapter <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#using-multi-factor-authentication>`__.
