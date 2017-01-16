@@ -39,6 +39,7 @@ This section will tell you how to:
   - :ref:`Facebook <create-facebook>`
   - :ref:`GitHub <create-github>`
   - :ref:`LinkedIn <create-linkedin>`
+  - :ref:`Twitter <create-twitter>`
 
 - :ref:`Create an LDAP Directory <directories-create-ldap>`
 
@@ -78,6 +79,7 @@ Currently, Stormpath allows your users to log in using their credentials from th
 - :ref:`Facebook <create-facebook>`
 - :ref:`GitHub <create-github>`
 - :ref:`LinkedIn <create-linkedin>`
+- :ref:`Twitter <create-twitter>`
 
 In order to configure this, you will need to input information about the Social Login Provider into a newly-created Stormpath Directory. Every Provider will need its own Directory (i.e. if you want users to log in with Google and Facebook, then you will have to create a Directory for each).
 
@@ -114,11 +116,6 @@ Optionally, you can also:
 
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
-
-.. figure:: images/directories/directories_create_google.png
-  :align: center
-  :scale: 100%
-  :alt: Google Directory
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
@@ -169,11 +166,6 @@ Optionally, you can also:
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
 
-.. figure:: images/directories/directories_create_fb.png
-  :align: center
-  :scale: 100%
-  :alt: Facebook Directory
-
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the Facebook Directory to your Application
@@ -218,11 +210,6 @@ Optionally, you can also:
 
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
-
-.. figure:: images/directories/directories_create_github.png
-  :align: center
-  :scale: 100%
-  :alt: GitHub Directory
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
@@ -270,11 +257,6 @@ Optionally, you can also:
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
 
-.. figure:: images/directories/directories_create_linkedin.png
-  :align: center
-  :scale: 100%
-  :alt: LinkedIn Directory
-
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the LinkedIn Directory to your Application
@@ -287,6 +269,51 @@ In order to enable login via LinkedIn, you must also map this Directory to one o
   Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with LinkedIn.
 
 At this point, any users that choose to login via LinkedIn will go through the LinkedIn OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from LinkedIn.
+
+.. _create-twitter:
+
+Twitter
+^^^^^^^^^^^^
+
+Before you integrate Twitter Login with Stormpath, you must complete the following steps:
+
+- Create an application on the `Twitter Application Management page <https://apps.twitter.com>`__
+- Retrieve your OAuth credentials (App ID and App Secret)
+-  Add your application's redirect URL, which is the URL the user will be returned to after successful authentication. If you are using the Client API, then this will be your Application's ``/authorize`` endpoint (e.g. ``https://cold-diver.apps.dev.stormpath.io/authorize/callback``).
+
+For more information, please see the `Twitter documentation <https://dev.twitter.com/oauth/overview/application-owner-access-tokens>`_.
+
+Step 1: Create the Twitter Directory
+"""""""""""""""""""""""""""""""""""""
+
+To create a new Twitter Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
+
+From here you must specify a "Directory Type", which you should change to "Twitter". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
+
+Additionally, you must add your Twitter application's:
+
+- Client ID
+- Client Secret
+
+All of these are obtained from `Twitter Application Management page <https://apps.twitter.com>`__
+
+Optionally, you can also:
+
+- Enter in a "Description" for the Directory.
+- Toggle the status from its default "Enabled" status to "Disabled"
+
+After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
+
+Step 2: Map the Twitter Directory to your Application
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+In order to enable login via Twitter, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
+
+.. note::
+
+  Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with Twitter.
+
+At this point, any users that choose to login via Twitter will go through the Twitter OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from Twitter.
 
 .. _directories-create-ldap:
 
@@ -303,8 +330,6 @@ For further instructions, see the :ref:`Agents section <agents>` of this guide.
 
 Create a SAML Directory
 -------------------------
-
-
 
 .. _directories-edit:
 
