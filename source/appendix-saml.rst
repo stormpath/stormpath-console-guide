@@ -8,7 +8,7 @@ This section will show you how to set-up Stormpath to allow your users to log in
 
 **What are the Service Provider and Identity Provider Initiated flows?**
 
-In the Service Provider (SP) -initiated flow, the user starts at your application. From a login page (either ID Site or one inside your Stormpath-powered application), the user is redirected to the Identity Provider. After authenticating with the Identity Provider, the user is returned to the application in an authenticate state.
+In the Service Provider (SP) -initiated flow, the user starts at your application. From a login page (either ID Site or one inside your Stormpath-powered application), the user is redirected to the Identity Provider. After authenticating with the Identity Provider, the user is returned to the application in an authenticated state.
 
 In the Identity Provider (IdP) Initiated flow, the user starts at the Identity Provider. After logging-in to the IdP, the user selects the Stormpath-enabled web application from within the IdP’s site, and is redirected to the application in an authenticated state.
 
@@ -55,7 +55,7 @@ To test out the SP-initiated flow, click on your newly created Stormpath SAML Di
 
 If you run into any errors, click on the question mark by the step you're having trouble with. This will redirect you to the documentation that explains the process and provides helpful debugging hints.
 
-To test out the IdP-initiated flow, navigate to your Identity Provider and log in. Next, launch your SAML Application. If everything has been set up correctly, you will be immediately redirected to the callback URI you configured with the authentication result passed as a URL parameter. This callback URI will validate the authentication result, return the Stormpath Account, and redirect you to the nextUri that you configured.
+To test out the IdP-initiated flow, navigate to your Identity Provider and log in. Next, launch your SAML Application. If everything has been set up correctly, you will be immediately redirected to the callback URI you configured with a secure JWT passed as a URL parameter. This callback URI will validate the JWT, exchange it for an access and refresh token, and redirect you to the nextUri that you configured.
 
 .. _create-salesforce:
 
