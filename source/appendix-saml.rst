@@ -22,7 +22,7 @@ The only difference in configuration steps between the two kinds of flows is tha
 
 These instructions assume that you have two things:
 
-- A Stormpath account with at least an **Advanced plan**
+- A Stormpath account with `a plan that supports SAML <https://stormpath.com/pricing>`__
 
 - A developer Account with one of the following Identity Providers who support SAML:
 

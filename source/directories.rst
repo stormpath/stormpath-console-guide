@@ -293,7 +293,7 @@ At this point, any users that choose to login via LinkedIn will go through the L
 Create an AD/LDAP Directory
 --------------------------
 
-In order to allow your users to login via external LDAP directories, including Active Directory, you will need at least an "Advanced" subscription or higher. For more information, please see the `Stormpath pricing page <https://stormpath.com/pricing>`__.
+In order to allow your users to login via external LDAP directories, including Active Directory, you will need a Subscription that supports it. For more information, please see the `Stormpath pricing page <https://stormpath.com/pricing>`__.
 
 To create a new AD/LDAP Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
 
