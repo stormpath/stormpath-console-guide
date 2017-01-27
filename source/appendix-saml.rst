@@ -1027,10 +1027,10 @@ Specifically, you want that Account's ``providerData`` resource, which you can s
 .. code-block:: json
 
   {
-    href: "https://api.stormpath.com/v1/accounts/4QwSP7tumdJJoCzPHiZ1Oq/providerData",
-    createdAt: "2017-01-11T01:38:18.211Z",
-    modifiedAt: "2017-01-11T23:55:02.413Z",
-    providerId: "saml"
+    "href": "https://api.stormpath.com/v1/accounts/4QwSP7tumdJJoCzPHiZ1Oq/providerData",
+    "createdAt": "2017-01-11T01:38:18.211Z",
+    "modifiedAt": "2017-01-11T23:55:02.413Z",
+    "providerId": "saml"
   }
 
 Everything here other than ``href``, ``createdAt`` and ``modifiedAt`` are Attributes passed by G-Suite.
