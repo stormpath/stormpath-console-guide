@@ -336,7 +336,7 @@ Before adding your Generic OAuth Directory in Stormpath, you must complete the f
 - Add your application's redirect URL, which is the URL the user will be returned to after successful authentication. If you are using the Client API, then this will be your Application's ``/authorize`` endpoint (e.g. ``https://endless-winter.apps.stormpath.io/authorize/callback``).
 
 Step 1: Create the Generic OAuth Directory
-"""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""
 
 To create a new Generic OAuth Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
 
