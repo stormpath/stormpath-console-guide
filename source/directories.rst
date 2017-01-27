@@ -39,9 +39,8 @@ This section will tell you how to:
   - :ref:`Facebook <create-facebook>`
   - :ref:`GitHub <create-github>`
   - :ref:`LinkedIn <create-linkedin>`
-  - :ref:`Twitter <create-twitter>`
 
-- :ref:`Create an LDAP Directory <directories-create-ldap>`
+- :ref:`Create an AD/LDAP Directory <directories-create-ldap>`
 
 - :ref:`Create a SAML Directory <directories-create-saml>`
 
@@ -79,7 +78,6 @@ Currently, Stormpath allows your users to log in using their credentials from th
 - :ref:`Facebook <create-facebook>`
 - :ref:`GitHub <create-github>`
 - :ref:`LinkedIn <create-linkedin>`
-- :ref:`Twitter <create-twitter>`
 
 In order to configure this, you will need to input information about the Social Login Provider into a newly-created Stormpath Directory. Every Provider will need its own Directory (i.e. if you want users to log in with Google and Facebook, then you will have to create a Directory for each).
 
@@ -116,6 +114,11 @@ Optionally, you can also:
 
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
+
+.. figure:: images/directories/directories_create_google.png
+  :align: center
+  :scale: 100%
+  :alt: Google Directory
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
@@ -166,6 +169,11 @@ Optionally, you can also:
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
 
+.. figure:: images/directories/directories_create_fb.png
+  :align: center
+  :scale: 100%
+  :alt: Facebook Directory
+
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the Facebook Directory to your Application
@@ -210,6 +218,11 @@ Optionally, you can also:
 
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
+
+.. figure:: images/directories/directories_create_github.png
+  :align: center
+  :scale: 100%
+  :alt: GitHub Directory
 
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
@@ -257,6 +270,11 @@ Optionally, you can also:
 - Enter in a "Description" for the Directory.
 - Toggle the status from its default "Enabled" status to "Disabled"
 
+.. figure:: images/directories/directories_create_linkedin.png
+  :align: center
+  :scale: 100%
+  :alt: LinkedIn Directory
+
 After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
 
 Step 2: Map the LinkedIn Directory to your Application
@@ -270,66 +288,94 @@ In order to enable login via LinkedIn, you must also map this Directory to one o
 
 At this point, any users that choose to login via LinkedIn will go through the LinkedIn OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from LinkedIn.
 
-.. _create-twitter:
-
-Twitter
-^^^^^^^^^^^^
-
-Before you integrate Twitter Login with Stormpath, you must complete the following steps:
-
-- Create an application on the `Twitter Application Management page <https://apps.twitter.com>`__
-- Retrieve your OAuth credentials (App ID and App Secret)
--  Add your application's redirect URL, which is the URL the user will be returned to after successful authentication. If you are using the Client API, then this will be your Application's ``/authorize`` endpoint (e.g. ``https://cold-diver.apps.dev.stormpath.io/authorize/callback``).
-
-For more information, please see the `Twitter documentation <https://dev.twitter.com/oauth/overview/application-owner-access-tokens>`_.
-
-Step 1: Create the Twitter Directory
-"""""""""""""""""""""""""""""""""""""
-
-To create a new Twitter Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
-
-From here you must specify a "Directory Type", which you should change to "Twitter". You will also need a "Name" for your Directory. The name must be unique within your Tenant.
-
-Additionally, you must add your Twitter application's:
-
-- Client ID
-- Client Secret
-
-All of these are obtained from `Twitter Application Management page <https://apps.twitter.com>`__
-
-Optionally, you can also:
-
-- Enter in a "Description" for the Directory.
-- Toggle the status from its default "Enabled" status to "Disabled"
-
-After you have completed this, click **Create** and the "Create Directory" dialog will close and you will see your new Directory in the list view.
-
-Step 2: Map the Twitter Directory to your Application
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-In order to enable login via Twitter, you must also map this Directory to one or more of your Application resources. For instructions on how to do this, please see :ref:`applications-accountstores`.
-
-.. note::
-
-  Depending on what SDK or Integration you are using, further steps may also be necessary to fully enable Login with Twitter.
-
-At this point, any users that choose to login via Twitter will go through the Twitter OAuth 2.0 process and have new Accounts created inside this Directory using information retrieved from Twitter.
-
 .. _directories-create-ldap:
 
-Create an LDAP Directory
+Create an AD/LDAP Directory
 --------------------------
 
 In order to allow your users to login via external LDAP directories, including Active Directory, you will need at least an "Advanced" subscription or higher. For more information, please see the `Stormpath pricing page <https://stormpath.com/pricing>`__.
 
-To create an LDAP Directory, start by navigating to the `Agents <https://api.stormpath.com/ui2/index.html#/agents>`__ section of the Admin Console.
+To create a new AD/LDAP Directory, start by clicking on **Create Directory** in the top right of the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. This will bring up the "Create Directory" dialog.
 
-For further instructions, see the :ref:`Agents section <agents>` of this guide.
+From here you must specify a "Directory Type", which you should change to "AD/LDAP". Click **Continue** to begin the setup.
+
+Creating your Agent
+------------------------
+
+There are 5 steps to creating a new Agent, each corresponding to a tab on the "Create New Agent" page.
+
+1. Directory
+^^^^^^^^^^^^^^
+
+Here you enter:
+
+- Your **Directory Name** (required)
+- **Directory Description** (optional)
+- **Status** (Enabled by default)
+
+2. Connection
+^^^^^^^^^^^^^^
+
+On this tab you will configure the Agent. All fields are required.
+
+.. note::
+
+  The Agent will need a login and password for an account with at least read-access to your LDAP directory.
+
+- **Agent Type:** Here you choose whether this Agent will be for an Active Directory instance, or a different kind of LDAP Directory.
+- **Directory Host:** The IP address or host name of the LDAP Directory server.
+- **Directory Port:** The port of the LDAP Directory server. The SSL default is ``636`` and the non-SSL default is ``389``.
+- **Require SSL:** Should the Agent communicate with your AD/LDAP server over SSL? If so, check this box and configure the Directory's port to accept SSL.
+- **Agent User DN:** The Distinguished Name (DN) for the account that the Agent will use.
+- **Agent User DN Password:** The password for the account that the Agent will use.
+- **Base DN:** The Base Distinguished Name identifies the entry in the directory from which searches initiated by LDAP clients occur.
+- **Polling Interval:** Here you enter in how often (in minutes) you would like the Agent to poll the LDAP directory.
+- **Agent Referrals:** Here there are two options: (1) Use Referrals. For more information, see `here <https://technet.microsoft.com/en-us/library/cc978014.aspx>`__; (2) Ignore Referral Exceptions. Checking this box ignores referral exceptions and allows (potentially partial) results to be returned.
+
+3. Accounts
+^^^^^^^^^^^^^^
+
+In this tab you will enter in information about the accounts in your LDAP directory. Specifically, you must enter in the LDAP attributes that map to the attributes found in a `Stormpath Account resource <https://docs.stormpath.com/rest/product-guide/latest/reference.html#account>`__.
+
+.. note::
+
+  Asterisks indicate required fields.
+
+4. Groups
+^^^^^^^^^^^^^^
+
+Similar to the previous tab, here you enter information about Groups in your LDAP directory. Just like with the "Accounts" tab, you are mapping the LDAP attributes in your directory to attributes in a `Stormpath Group resource <https://docs.stormpath.com/rest/product-guide/latest/reference.html#group>`__.
+
+.. note::
+
+  Asterisks indicate required fields.
+
+5. Review
+^^^^^^^^^^^^^^
+
+On this tab you will see a summary of the information that you entered. If you need to change anything, you can click on the corresponding tab and edit that field.
+
+Once you have reviewed all the information, click **Create Agent**. You will now arrive on the "Directory" page of your new AD/LDAP Directory.
+
+Installing Your LDAP Agent
+--------------------------
+
+Scroll down to "AD/LDAP Agent Configuration". Follow the steps on the "Agent Installation" tab to download, configure, and start your Agent. If you made a mistake with any of the settings, don't worry! You can edit them by toggling between the "Agent Configuration", "Account Configuration", and "Group Configuration" Tabs.
+
+Follow the instructions on the page here to download, configure and start your LDAP Agent.
+
+Viewing the Agent's Status
+--------------------------
+
+The Agent's status can be either ONLINE, OFFLINE, or ERROR. You can view the status by clicking on the main `Directories page <https://api.stormpath.com/ui2/index.html#/directories>`__. Once an Agent is created, the "Agent Status" column will appear on this page. You can also view the status by clicking on your AD/LDAP Directory. The Agent's status is right under the Directory status.
+
 
 .. _directories-create-saml:
 
 Create a SAML Directory
 -------------------------
+
+
 
 .. _directories-edit:
 

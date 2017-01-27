@@ -8,11 +8,11 @@ This section will show you how to set-up Stormpath to allow your users to log in
 
 **What are the Service Provider and Identity Provider Initiated flows?**
 
-In the Service Provider (SP)-initiated flow, the user starts at your application. From a login page (either ID Site or one inside your Stormpath-powered application), the user is redirected to the Identity Provider. After authenticating with the Identity Provider, the user is returned to the application in an authenticate state.
+In the Service Provider (SP) -initiated flow, the user starts at your application. From a login page (either ID Site or one inside your Stormpath-powered application), the user is redirected to the Identity Provider. After authenticating with the Identity Provider, the user is returned to the application in an authenticated state.
 
-In the Identity Provider (IdP)-initiated flow, the user starts at the Identity Provider. After logging-in to the IdP, the user selects the Stormpath-enabled web application from within the IdP’s site, and is redirected to the application in an authenticated state.
+In the Identity Provider (IdP) Initiated flow, the user starts at the Identity Provider. After logging-in to the IdP, the user selects the Stormpath-enabled web application from within the IdP’s site, and is redirected to the application in an authenticated state.
 
-For more information, see the `REST Product Guide <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#the-stormpath-saml-flow>`__.
+For more, see the `Product Guide <https://docs.stormpath.com/rest/product-guide/latest/auth_n.html#the-stormpath-saml-flow>`__. Feel free to toggle to the language of your choice by clicking on "Switch Language" in the upper left-hand corner of the page.
 
 **Configuring Service Provider vs Identity Provider Initiated**
 
@@ -30,6 +30,7 @@ These instructions assume that you have two things:
     - :ref:`OneLogin <create-onelogin>`
     - :ref:`Okta <create-okta>`
     - :ref:`Ping Identity <create-ping>`
+    - :ref:`G-Suite <create-gsuite>`
 
 We also provide authentication against an **Active Directory** via :ref:`ADFS SAML <create-adfs>` and :ref:`Azure AD <create-azure>`.
 
@@ -42,7 +43,19 @@ We also provide authentication against an **Active Directory** via :ref:`ADFS SA
   - OneLogin
   - Okta
   - Ping Identity
-  - ADFS
+  - G-Suite
+  - Active Directory via ADFS
+
+Test it out!
+^^^^^^^^^^^^
+
+Once you finish the below steps to get either SP-initiated or IdP-initiated SAML working with your Identity Provider, you can test out both workflows.
+
+To test out the SP-initiated flow, click on your newly created Stormpath SAML Directory and navigate to the "Configuration Test" tab. Select the Stormpath Application that you mapped your SAML Directory to, and select the API key that you used to start your Application. Next, click on "Start Test" and follow the prompt.
+
+If you run into any errors, click on the question mark by the step you're having trouble with. This will redirect you to the documentation that explains the process and provides helpful debugging hints.
+
+To test out the IdP-initiated flow, navigate to your Identity Provider and log in. Next, launch your SAML Application. If everything has been set up correctly, you will be immediately redirected to the callback URI you configured with a secure JWT passed as a URL parameter. This callback URI will validate the JWT, exchange it for an access and refresh token, and redirect you to the nextUri that you configured.
 
 .. _create-salesforce:
 
@@ -197,12 +210,12 @@ We will now complete the final steps in the Stormpath Admin Console: adding one 
 
 You have now completed the initial steps of setting-up log in via Salesforce.
 
-Step 5: Configure Your Attribute Mappings
-"""""""""""""""""""""""""""""""""""""""""
+Step 5: (Optional) Configure Your Attribute Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 When a new Account logs in via SAML, Salesforce sends along a number of SAML attributes. These attributes are mapped to Stormpath `Account attributes <https://docs.stormpath.com/rest/product-guide/latest/reference.html#account>`__ (such as ``givenName`` or ``email``) and these values are either stored, if the Account is new, or updated, if the Account exists but the values are different. In this step you will configure how these Salesforce SAML Attributes are mapped to Stormpath attributes.
 
-4.1. Find the Existing SAML Attributes
+5.1. Find the Existing SAML Attributes
 ++++++++++++++++++++++++++++++++++++++
 
 If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that Salesforce sends by retrieving the new user Account that was created inside Stormpath.
@@ -226,7 +239,7 @@ Everything here other than ``href``, ``createdAt`` and ``modifiedAt`` are Attrib
 
 Now the ``email`` Attribute has already been passed as part of the Account creation, but you can also map the other SAML Attributes to Stormpath Account attributes as well.
 
-4.2. (Optional) Add Any Additional Attributes You Want
+5.2. Add Any Additional Attributes You Want
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If there are other attributes that you would like Salesforce to pass, you can configure this. From your Salesforce settings page:
@@ -246,7 +259,7 @@ For example:
 
 You will now be returned to your App's main page, and you will see the attribute you just added in the "Custom Attributes" section. You can add as many attributes as you wish.
 
-4.3. Specify Your Mapping
+5.3. Specify Your Mapping
 +++++++++++++++++++++++++
 
 #. Go to your `Stormpath Admin Console <https://api.stormpath.com/>`__
@@ -409,8 +422,8 @@ We will now complete the final steps in the Stormpath Admin Console: adding one 
 
 You have now completed the initial steps of setting-up log in via OneLogin.
 
-Step 6: Configure Your Attribute Mappings
-"""""""""""""""""""""""""""""""""""""""""
+Step 6: (Optional) Configure Your Attribute Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 When a new Account logs in via SAML, OneLogin sends along a number of SAML attributes. These attributes are mapped to Stormpath `Account attributes <https://docs.stormpath.com/rest/product-guide/latest/reference.html#account>`__ (such as ``givenName`` or ``email``) and these values are either stored, if the Account is new, or updated, if the Account exists but the values are different. In this step you will configure how these OneLogin SAML Attributes are mapped to Stormpath attributes.
 
@@ -438,7 +451,7 @@ Everything here other than ``href``, ``createdAt`` and ``modifiedAt`` are Attrib
 
 Now the ``email`` Attribute has already been passed as part of the Account creation, but you can also map the other attributes to Stormpath Account attributes as well.
 
-6.2. (Optional) Add Any Additional Attributes You Want
+6.2. Add Any Additional Attributes You Want
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If there are other attributes that you would like OneLogin to pass, you can configure this. From your OneLogin settings page:
@@ -624,8 +637,8 @@ We will now complete the final steps in the Stormpath Admin Console: adding one 
 
 You have now completed the initial steps of setting-up login via Okta.
 
-Step 6: Configure Your Attribute Mappings
-"""""""""""""""""""""""""""""""""""""""""
+Step 6: (Optional) Configure Your Attribute Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 When a new Account logs in via SAML, Okta sends along a number of SAML attributes. These attributes are mapped to Stormpath `Account attributes <https://docs.stormpath.com/rest/product-guide/latest/reference.html#account>`__ (such as ``givenName`` or ``email``) and these values are either stored, if the Account is new, or updated, if the Account exists but the values are different. In this step you will configure how these IdP SAML Attributes are mapped to Stormpath attributes.
 
@@ -647,7 +660,7 @@ Specifically, you want that Account's ``providerData`` resource, which you can s
 
 As you can see there are no default attributes passed by Okta, but you can map any attributes you like to the Stormpath Account attributes as well.
 
-6.2. (Optional) Add Any Additional Attributes You Want
+6.2. Add Any Additional Attributes You Want
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If there are attributes that you would like Okta to pass, you can configure this. From your Okta Admin settings page:
@@ -817,8 +830,8 @@ We will now complete the final steps in the Stormpath Admin Console: adding one 
 
 You have now completed the initial steps of configuring login via SAML for Ping Identity.
 
-Step 5: Configure Your Attribute Mappings
-"""""""""""""""""""""""""""""""""""""""""
+Step 5: (Optional) Configure Your Attribute Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 When a new Account logs in via SAML, Ping sends along a number of SAML attributes. These attributes are mapped to Stormpath `Account attributes <https://docs.stormpath.com/rest/product-guide/latest/reference.html#account>`__ (such as ``givenName`` or ``email``) and these values are either stored, if the Account is new, or updated, if the Account exists but the values are different. In this step you will configure how these Ping SAML Attributes are mapped to Stormpath attributes.
 
@@ -844,7 +857,7 @@ Everything here other than ``href``, ``createdAt`` and ``modifiedAt`` are Attrib
 
 If you want, you can map other SAML Attributes to Stormpath Account attributes.
 
-4.2. (Optional) Add Any Additional Attributes You Want
+4.2. Add Any Additional Attributes You Want
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If there are other attributes that you would like Ping to pass, you can configure this.
@@ -877,14 +890,198 @@ For example, you could enter, using the custom attribute from Step 4.2 above:
 
 If a user now logs in, Stormpath will take the ``firstname`` attribute and map it to the ``givenName`` field on the Account resource.
 
+.. _create-gsuite:
+
+G-Suite
+^^^^^^^^^^
+
+G-Suite is compatible with both Service Provider (SP)-initiated and Identity Provider (IdP)-initiated flows.
+
+.. contents::
+    :local:
+    :depth: 1
+
+Step 1: Set-up G-Suite
+""""""""""""""""""""""
+
+#. Log in to the Google Admin Console: https://admin.google.com
+#. Click on the **Apps** box and then click on **SAML Apps**
+#. Click the + button to add a new SAML Application
+#. In the modal, click on **Setup my Own Custom App**
+
+Step 2: Gather the Google IdP Information
+"""""""""""""""""""""""""""""""""""""""""
+
+You will now need to gather the following pieces of information:
+
+- SSO URL
+- Entity ID
+- Certificate
+
+Click on **Download** beside Certificate. This will download ``GoogleIDPCertificate-DOMAIN.pem``, which you need to open in a text editor of your choice.
+
+Open the ``GoogleIDPCertificate-DOMAIN.pem`` file in a text editor of your choice, and copy its contents. The file should look like this:
+
+.. code-block:: none
+
+  -----BEGIN CERTIFICATE-----
+  MIIDaDCCAlCgAwIBAgIGAVQ0xF8mMA0GCSqGSIb3DQEBCwUAMHUxCzAJBgNVBAYTAlVTMQswCQYD
+  {More certificate content here}
+  8bMh4fe2s1wR6pDkVjgEwu0DW2zBcXSg9KuT3lcWEUIq3Bct7Cdng12C0zXbgnQJAFtzHYbXAwkG
+  sh3WzqLNeYeoU5sGPWhlvNR7n2R1
+  -----END CERTIFICATE-----
+
+Step 3: Create Your SAML Directory in Stormpath
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+You will now create your SAML Directory in Stormpath, using the values you gathered in the previous step. Then you will use information from this newly-created Directory to configure Stormpath as a Service Provider in the IdP in the next step.
+
+3.1. Create Your SAML Directory
++++++++++++++++++++++++++++++++
+
+#. Log in to the Stormpath Admin Console: https://api.stormpath.com
+
+#. Click on the **Directories** tab.
+
+#. Click on **Create Directory**.
+
+#. From the "Directory Type" drop-down menu, select "SAML", which will bring up a Directory creation dialog.
+
+#. Next, enter in a name and (optionally) a description, then set the Directory's status to "Enabled".
+
+#. For both the "SAML SSO Login Url" and "SAML SSO Logout Url" fields, you will enter in the "SSO URL" gathered in step 2.
+
+#. For the "SAML X.509 Signing Cert" field, paste in the text content from the IdP certificate (the .pem file) you created in step 2.
+
+#. Finally, select "RSA-SHA256" as the "SAML Request Signature Algorithm".
+
+#. Once all this information is entered, click on **Create Directory**. At this point, you will arrive back on the main Directories page.
+
+3.2. Gather Your SAML Directory Information
++++++++++++++++++++++++++++++++++++++++++++
+
+Find and click on your new SAML Directory.
+
+Click on the ‘Identity Provider’ tab. Copy the ‘Entity ID’ and the ‘Assertion Consumer Service URL’.
+
+Under the "Identity Provider" tab, you will need to gather the follow information:
+
+- The "Entity ID"
+
+- The "Assertion Consumer Service URL"
+
+We will now input these values into the Identity Provider.
+
+Step 4: Configure Your Service Provider in G-Suite
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Back on your G-Suite SAML Application page (where you previously downloaded the certificate), you will now enter in your Stormpath Directory information:
+
+#. The "(ACS) URL" is the Stormpath "Assertion Consumer Service URL" from the previous step.
+
+#. The "Entity ID" is the "Entity ID" from the previous step.
+
+#. Check the box that says "Signed Response".
+
+#. Set the "Name ID" fields to "Basic Information" and "Primary Email"
+
+#. Set the "Name ID Format" to "Email"
+
+#. Click **Continue to Next Step**, then click **Save & Publish**
+
+#. On the G-Suite SAML Application you just created, turn the Application "ON". You can either turn this Application on for everyone, or for users in your Organization only.
+
+Step 5: Configure Your Application in Stormpath
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+We will now complete the final steps in the Stormpath Admin Console: adding one or more Callback URIs to the Application, and mapping your SAML Directory to your Application.
+
+#. Switch back to the `Stormpath Admin Console <https://api.stormpath.com>`__ and go to the **Applications** tab.
+
+#. Select the Application that will be using the SAML Directory.
+
+#. On the main "Details" page, you will see "Authorized Callback URIs". You should include here a list of the URLs that your users will be redirected to at the end of the SAML authentication flow. Note that the Authorized Callback URIs cannot exceed 4000 characters in total length.
+
+#. Next click on **Account Stores** in the left-side navigation pane.
+
+#. Once you are on your Application's Account Stores page, click **Add Account Store**. This will bring up the "Map Account Store" dialog.
+
+#. Ensure that you are in the "Directories" tab and select your Ping Identity Directory from the list.
+
+#. Click **Create Mappings**.
+
+You have now completed the initial steps of configuring login via SAML for G-Suite!
+
+Step 6: (Optional) Configure Your Attribute Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+When a new Account logs in via SAML, Ping sends along a number of SAML attributes. These attributes are mapped to Stormpath `Account attributes <https://docs.stormpath.com/rest/product-guide/latest/reference.html#account>`__ (such as ``givenName`` or ``email``) and these values are either stored, if the Account is new, or updated, if the Account exists but the values are different. In this step you will configure how these Ping SAML Attributes are mapped to Stormpath attributes.
+
+6.1. Find the Existing SAML Attributes
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+If you have already successfully set-up SAML and authenticated a user with your app, you will be able to retrieve the SAML Attributes that G-Suite sends by retrieving the new user Account that was created inside Stormpath.
+
+Specifically, you want that Account's ``providerData`` resource, which you can see by clicking on the "HREF" link on the Account's main page, then following the `providerData` `href` :
+
+.. code-block:: json
+
+  {
+    href: "https://api.stormpath.com/v1/accounts/4QwSP7tumdJJoCzPHiZ1Oq/providerData",
+    createdAt: "2017-01-11T01:38:18.211Z",
+    modifiedAt: "2017-01-11T23:55:02.413Z",
+    providerId: "saml"
+  }
+
+Everything here other than ``href``, ``createdAt`` and ``modifiedAt`` are Attributes passed by G-Suite.
+
+If you want, you can map other SAML Attributes to Stormpath Account attributes.
+
+6.2. Add Any Additional Attributes You Want
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+If there are other attributes that you would like G-Suite to pass, you can configure this.
+
+#. Make sure you are on the G-Suite SAML Apps page.
+#. Click on your application, and click on the "Attribute Mapping" box. This will expand the mapping details.
+#. Click the **Add New Mapping** button.
+#. You can type whatever string you'd like under "Application Attribute". For example, "firstName".
+#. In the second box, you can click on the textbox to see a list of available values. For this example, you can select **Basic Information**.
+#. Under "Select User Field", click on the box to see a list of available values. For this example, you can select **First Name**.
+#. Finally click on **Save**.
+
+6.3. Specify Your Mapping
+++++++++++++++++++++++++++++++++++++
+
+#. Go to your `Stormpath Admin Console <https://api.stormpath.com/>`__
+#. Click on the **Directories** tab
+#. Select your G-Suite SAML Directory
+#. Under the "SAML Attribute Statement Mapping Rules" section you will see three fields: "Name", "Name Format", and "Stormpath Attributes"
+#. Here you will enter the G-Suite attribute name under "Name"
+#. Finally, enter the Account attribute(s) that you would like this G-Suite attribute to map to
+
+For example, you could enter, using the custom attribute from the example above:
+
+* For the "Name" enter ``firstname``
+* For "Stormpath Attributes" enter ``givenName``
+
+If a user now logs in, Stormpath will take the ``firstname`` attribute and map it to the ``givenName`` field on the Account resource.
+
+Step 7: (IdP-initiated Flow Only) Generate a RelayState
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+#. After going through the SP-initiated instructions above, navigate back to your Stormpath G-Suite SAML Directory in the Admin Console. Click on **Generate Default Relay State**.
+#. In this box, you'll need to select the Application your Directory is mapped to, and select your API key. The API key you select should be the same API key you used to connect to Stormpath when you started your Application. You'll also need to add the same callback URI you added to your Application. Copy the generated default relay state and close out of the box.
+#. Navigate back to your G-Suite SAML Application and click on "Service Provider Details". Under "Start URL", paste in the default relay state.
+
 .. _create-adfs:
 
 Active Directory Federation Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Stormpath's allows you to link your Active Directory to Stormpath via SAML and Active Directory Federation Services (ADFS). In order to link the two, you must configure your ADFS server with information about your Stormpath Directory, and vice versa. This will then allow users to log in to your application by authenticating with the ADFS server, and have their Active Directory user information mirrored into Stormpath. Both SP-initiated and IDP-initiated workflows are available.
+Stormpath's allows you to link your Active Directory to Stormpath via SAML and Active Directory Federation Services (ADFS). In order to link the two, you must configure your ADFS server with information about your Stormpath Directory, and vice versa. This will then allow users to log in to your application by authenticating with the ADFS server, and have their Active Directory user information mirrored into Stormpath.
 
-These instructions assume that you have an instance of Windows Server 2012 R2 running ADFS 2.0 or 3.0, fully configured and with existing users.
+These instructions assume that you have an instance of Windows Server 2012 R2 running ADFS 3.0, fully configured and with existing users.
 
 Step 1: Download Your Signing Certificate
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -995,7 +1192,7 @@ Step 4: Configure Your Application in Stormpath
 
 #. Click **Create Mappings**.
 
-Step 5: Configure Your Attribute Mappings (Optional)
+Step 5: (Optional) Configure Your Attribute Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 By default, the only user information that is passed by ADFS is the User Principal Name (UPN). Stormpath will use this to populate the user Account's ``username`` and ``email`` attributes. Other attributes, like ``surname`` will appear as ``NOT_PROVIDED``. If you would like other Active Directory attributes to be passed to Stormpath and mapped to Account attributes, you can configure this now.
@@ -1031,31 +1228,6 @@ By default, the only user information that is passed by ADFS is the User Princip
       Given-Name   --> firstName  -->        givenName
 
   Since the ADFS Claim is what is being received by Stormpath, the Admin Console only needs to know the mapping between the ADFS Claim and the Account Attribute.
-
-Step 6: (IdP-initiated Flow Only) Generate a RelayState
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-#. After going through the SP-initiated instructions above, navigate back to your SAML Directory in the Admin Console. Under the Identity Provider" tab, copy the "Assertion Consumer Service URL". We will be using this later.
-
-#. Click on the "Generate Default Relay State" button. In this box, you'll need to select the Application your Directory is mapped to, and select your API key. The API key you select should be the same API key you used to connect to Stormpath when you started your Application. You'll also need to add the same callback URI you added to your Application. Copy the generated default relay state and close out of the box.
-
-#. In ADFS, navigate back to ADFS Management and expand "Trust Relationships". Click on "Relying Party Trusts". Double click to open the Relying Party you created earlier. On the "Endpoints" tab, double click to edit the SAML Assertion Consumer Endpoint. Double check that the endpoint type is "SAML Assertion Consumer" and that the binding is "POST". Click the checkbox next to "Set the trusted URL as default". In the trusted url textbox, add the Assertion Consumer Service URL that you saved earlier. Next, add the default relay state you generated as a url parameter. The resulting string should look like this:
-
-    .. code-block:: none
-
-        https://stormpath-environment.com/v1/directories/$DIRECTORY_ID/saml/sso/post?RelayState=$DEFAULT_RELAY_STATE
-
-#. Click "OK" to save the endpoint.
-
-#. Next, click on the "Add SAML" button. Make sure the endpoint type is "SAML Assertion Consumer" and that the binding is "POST". Set the Index to 1. In the trusted url textbox, add the Assertion Consumer Server URL. That string look like this:
-
-    .. code-block:: none
-
-        https://stormpath-environment.com/v1/directories/$DIRECTORY_ID/saml/sso/post
-
-#. Click "OK" to save the endpoint, and then click "Apply" to save all changes.
-
-#. Lastly, restart the ADFSSRV service. You can do so by opening the "Server Manage", clicking on the "ADFS" tab, scrolling down to "Services", and right clicking on the service whose service name is "ADFSSRV". From this list, you should click on "Restart Services".
 
 .. _create-azure:
 
