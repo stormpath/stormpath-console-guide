@@ -4,7 +4,44 @@
 Appendix: SAML
 ***************
 
+SAML is an XML-based standard for exchanging authentication and authorization data between security domains. The security domains are the Service Provider and the Identity Provider. The **Service Provider** is the service that the user is trying to access, but access requires authentication. This authentication is done with the **Identity Provider**, which is the canonical source of user information.
+
+Stormpath is able to function as either end of the SAML authentication. This means that your Stormpath-powered application could either be the Identity Provider, and provide authentication for a third-party application such as Zendesk, or it could be the Service Provider, and require authentication with a third-party Identity Provider like Okta.
+
+Your application serves as the Identity Provider if:
+
+- The user requires authentication to access a third-party resource (e.g. Zendesk)
+- Your application (and it's Stormpath Directory) contains the user information
+
+Your application serves as the Service Provider if:
+
+- The user requires authentication to access your application
+- An external Identity Provider (e.g. Okta) contains the user information
+
+
+Stormpath as an Identity Provider
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this case, Stormpath is serving as the IdP, which is the repository for user data. A request is first made to the Service Provider, who redirects to Stormpath. Authentication is done against Stormpath, and then the user is passed back to the Service Provider in an authenticated state.
+
+.. note::
+
+  Currently Stormpath as an Identity Provider only supports the Service Provider-initiated flow. For more on the two kinds of SAML flows, see :ref:`below <saml-flows>`
+
+For example:
+
+#. A user tries to access Zendesk: ``https://samlexample.zendesk.com/``
+#. The user is redirected to your Stormpath ID Site page: ``https://iron-troop.id.stormpath.io/#/``
+#. The user authenticates with Stormpath
+#. On successful authentication, the user is redirected back to Zendesk
+
+
+Stormpath as a Service Provider
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This section will show you how to set-up Stormpath to allow your users to log in with a SAML-enabled Identity Provider via either the Service Provider (SP) or Identity Provider (IdP) Initiated flows. Examples of Identity Providers that you can integrate with include Salesforce and OneLogin.
+
+.. _saml-flows:
 
 **What are the Service Provider and Identity Provider Initiated flows?**
 
